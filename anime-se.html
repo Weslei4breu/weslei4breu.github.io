@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anime Se e Anime Betim | Eventos Geek | Weslei Abreu</title>
+<meta name="description" content="Anime Se e Anime Betim: eventos de cultura geek e pop produzidos por Weslei Abreu, com cosplay, shows, games e palestras. Veja os cartazes e as fotos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@400;700&family=Figtree:wght@300;400&family=Oswald:wght@700&family=Playfair+Display&family=Poppins:wght@600&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  :root { --bg-opacity: 0.2; }
+  .anime-text { line-height: 22.4px; }
+  .anime-text p { margin: 0; }
+  /* Galeria das fotos dos eventos, em grade que se ajusta à tela */
+  .ev-gallery {
+    flex: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto 60px;
+    padding: 0 16px;
+  }
+  .ev-gallery img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: zoom-in;
+    transition: transform .2s ease, filter .2s ease;
+  }
+  .ev-gallery img:hover { transform: scale(1.04); filter: brightness(1.08); }
+  @media (max-width: 640px) {
+    .ev-gallery { grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 0 10px; }
+  }
+  /* Títulos das galerias e crédito da fotógrafa */
+  .ev-title {
+    flex: none;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto 14px;
+    padding: 0 16px;
+    font: 700 22px/1.2 "Oswald", sans-serif;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #e9a77f;
+  }
+  .ev-credit { flex: none; width: 100%; max-width: 860px; margin: 0 auto 16px; padding: 0 16px; }
+  .ev-credit .ev-title { padding: 0; margin-bottom: 0; }
+  .ev-credit p { margin: 0; font: 300 15px/1.5 var(--sans); color: #ddd; }
+  .ev-credit a { color: #e9a77f; text-decoration: underline; }
+  /* Fotos inteiras, sem corte, para a marca d'água da fotógrafa ficar sempre visível */
+  .ev-masonry {
+    flex: none;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto 60px;
+    padding: 0 16px;
+    columns: 4 180px;
+    column-gap: 10px;
+  }
+  .ev-masonry img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    break-inside: avoid;
+    cursor: zoom-in;
+    transition: filter .2s ease;
+  }
+  .ev-masonry img:hover { filter: brightness(1.1); }
+  @media (max-width: 640px) {
+    .ev-title { font-size: 19px; padding: 0 10px; }
+    .ev-credit { padding: 0 10px; }
+    .ev-masonry { columns: 2; column-gap: 6px; padding: 0 10px; }
+    .ev-masonry img { margin-bottom: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+
+<header class="stage-wrap head-wrap" id="top">
+  <div class="stage">
+    <a class="el logo" href="index.html" aria-label="Início" style="--x:437;--y:0;--w:141;--h:162">
+      <img src="img/logo-lampada.png" alt="">
+    </a>
+    <p class="el name" style="--x:16;--y:30;--w:964;--h:135"><a href="index.html">WESLEI&nbsp;&nbsp;ABREU</a></p>
+    <nav class="el roles" style="--x:104;--y:202">
+      <a href="portifolio.html">Designer</a>
+      <span class="sep">*</span>
+      <a href="produtor.html">Produtor</a>
+      <span class="sep">*</span>
+      <span>Social Media</span>
+      <span class="sep">*</span>
+      <a href="dev-e-ti.html">TI</a>
+    </nav>
+  </div>
+</header>
+
+<main class="stage-wrap content-wrap" style="--content-h:700">
+  <div class="stage">
+    <div class="el plate" style="--x:80;--y:52;--w:820;--h:88">
+      <h1 class="vtext" data-text="Anime Se" style="--w:200;--h:51"></h1>
+    </div>
+
+    <div class="el zoomable" role="button" tabindex="0" aria-label="Ampliar: cartaz do Anime-se" data-full="media/full-0c78e6c8a4.jpg" style="--x:88;--y:166;--w:263;--h:360">
+      <img src="media/img-0c78e6c8a4-ce019f.png" alt="Cartaz do evento Anime-se, 7 e 8 de dezembro de 2013, Mercado das Borboletas, Belo Horizonte">
+      <span class="zoom-btn" aria-hidden="true">+</span>
+    </div>
+    <div class="el zoomable" role="button" tabindex="0" aria-label="Ampliar: cartaz do Anime Betim" data-full="media/full-ce43186cb7.jpg" style="--x:381;--y:166;--w:512;--h:360">
+      <img src="media/img-ce43186cb7-9f6f6f.jpg" alt="Cartaz do Anime Betim, 2ª edição, 5 e 6 de junho de 2010">
+      <span class="zoom-btn" aria-hidden="true">+</span>
+    </div>
+
+    <div class="el text justify anime-text" style="--x:88;--y:565;--w:805;--h:110">
+      <p>O Anime Se e o Anime Betim são eventos de cultura geek e pop produzidos por Weslei Abreu, com cosplay, shows de bandas, games, palestras com dubladores, concursos e oficinas. Mais do que diversão, são projetos de cunho educacional, social e inclusivo, que aproximam os jovens da arte, da tecnologia e do empreendedorismo. Abaixo você encontra os cartazes das edições e fotos dos eventos.</p>
+    </div>
+  </div>
+</main>
+
+<h2 class="ev-title ev-title-top">Fotos dos eventos</h2>
+<section class="ev-gallery" aria-label="Fotos dos eventos Anime Se e Anime Betim">
+  <img src="media/anime/e001.jpg" data-full="media/anime/e001.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e002.jpg" data-full="media/anime/e002.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e003.jpg" data-full="media/anime/e003.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e004.jpg" data-full="media/anime/e004.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e005.jpg" data-full="media/anime/e005.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e006.jpg" data-full="media/anime/e006.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e007.jpg" data-full="media/anime/e007.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e008.jpg" data-full="media/anime/e008.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e009.jpg" data-full="media/anime/e009.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e010.jpg" data-full="media/anime/e010.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e011.jpg" data-full="media/anime/e011.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e012.jpg" data-full="media/anime/e012.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e013.jpg" data-full="media/anime/e013.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e014.jpg" data-full="media/anime/e014.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e015.jpg" data-full="media/anime/e015.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e016.jpg" data-full="media/anime/e016.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e017.jpg" data-full="media/anime/e017.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e018.jpg" data-full="media/anime/e018.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e019.jpg" data-full="media/anime/e019.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e020.jpg" data-full="media/anime/e020.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e021.jpg" data-full="media/anime/e021.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e022.jpg" data-full="media/anime/e022.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e023.jpg" data-full="media/anime/e023.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e024.jpg" data-full="media/anime/e024.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e025.jpg" data-full="media/anime/e025.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e026.jpg" data-full="media/anime/e026.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e027.jpg" data-full="media/anime/e027.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e028.jpg" data-full="media/anime/e028.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e029.jpg" data-full="media/anime/e029.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e030.jpg" data-full="media/anime/e030.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e031.jpg" data-full="media/anime/e031.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e032.jpg" data-full="media/anime/e032.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e033.jpg" data-full="media/anime/e033.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e034.jpg" data-full="media/anime/e034.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e035.jpg" data-full="media/anime/e035.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e036.jpg" data-full="media/anime/e036.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e037.jpg" data-full="media/anime/e037.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e038.jpg" data-full="media/anime/e038.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e039.jpg" data-full="media/anime/e039.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e040.jpg" data-full="media/anime/e040.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e041.jpg" data-full="media/anime/e041.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e042.jpg" data-full="media/anime/e042.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e043.jpg" data-full="media/anime/e043.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e044.jpg" data-full="media/anime/e044.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e045.jpg" data-full="media/anime/e045.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e046.jpg" data-full="media/anime/e046.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e047.jpg" data-full="media/anime/e047.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e048.jpg" data-full="media/anime/e048.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e049.jpg" data-full="media/anime/e049.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e050.jpg" data-full="media/anime/e050.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e051.jpg" data-full="media/anime/e051.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e052.jpg" data-full="media/anime/e052.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e053.jpg" data-full="media/anime/e053.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e054.jpg" data-full="media/anime/e054.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e055.jpg" data-full="media/anime/e055.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e056.jpg" data-full="media/anime/e056.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e057.jpg" data-full="media/anime/e057.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e058.jpg" data-full="media/anime/e058.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e059.jpg" data-full="media/anime/e059.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e060.jpg" data-full="media/anime/e060.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e061.jpg" data-full="media/anime/e061.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e062.jpg" data-full="media/anime/e062.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e063.jpg" data-full="media/anime/e063.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e064.jpg" data-full="media/anime/e064.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e065.jpg" data-full="media/anime/e065.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e066.jpg" data-full="media/anime/e066.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e067.jpg" data-full="media/anime/e067.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e068.jpg" data-full="media/anime/e068.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e069.jpg" data-full="media/anime/e069.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e070.jpg" data-full="media/anime/e070.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e071.jpg" data-full="media/anime/e071.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e072.jpg" data-full="media/anime/e072.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e073.jpg" data-full="media/anime/e073.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e074.jpg" data-full="media/anime/e074.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e075.jpg" data-full="media/anime/e075.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e076.jpg" data-full="media/anime/e076.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e077.jpg" data-full="media/anime/e077.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e078.jpg" data-full="media/anime/e078.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e079.jpg" data-full="media/anime/e079.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e080.jpg" data-full="media/anime/e080.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e081.jpg" data-full="media/anime/e081.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e082.jpg" data-full="media/anime/e082.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e083.jpg" data-full="media/anime/e083.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e084.jpg" data-full="media/anime/e084.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e085.jpg" data-full="media/anime/e085.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e086.jpg" data-full="media/anime/e086.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e087.jpg" data-full="media/anime/e087.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e088.jpg" data-full="media/anime/e088.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e089.jpg" data-full="media/anime/e089.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e090.jpg" data-full="media/anime/e090.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e091.jpg" data-full="media/anime/e091.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e092.jpg" data-full="media/anime/e092.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e093.jpg" data-full="media/anime/e093.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e094.jpg" data-full="media/anime/e094.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e095.jpg" data-full="media/anime/e095.jpg" alt="Foto do evento Anime Se" loading="lazy">
+  <img src="media/anime/e096.jpg" data-full="media/anime/e096.jpg" alt="Foto do evento Anime Se" loading="lazy">
+</section>
+
+<section class="ev-credit" aria-labelledby="cosplusup-title">
+  <h2 id="cosplusup-title" class="ev-title">Anime Se BH 2014 · Palco</h2>
+</section>
+<section class="ev-masonry" aria-label="Fotos do palco do Anime Se BH 2014, por Marcella Santos / Cos+Up">
+  <img src="media/cosplusup/mini/f001.jpg" data-full="media/cosplusup/f001.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f002.jpg" data-full="media/cosplusup/f002.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f003.jpg" data-full="media/cosplusup/f003.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f004.jpg" data-full="media/cosplusup/f004.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f005.jpg" data-full="media/cosplusup/f005.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f006.jpg" data-full="media/cosplusup/f006.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f007.jpg" data-full="media/cosplusup/f007.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f008.jpg" data-full="media/cosplusup/f008.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f009.jpg" data-full="media/cosplusup/f009.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f010.jpg" data-full="media/cosplusup/f010.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f011.jpg" data-full="media/cosplusup/f011.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f012.jpg" data-full="media/cosplusup/f012.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f013.jpg" data-full="media/cosplusup/f013.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f014.jpg" data-full="media/cosplusup/f014.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f015.jpg" data-full="media/cosplusup/f015.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f016.jpg" data-full="media/cosplusup/f016.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f017.jpg" data-full="media/cosplusup/f017.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f018.jpg" data-full="media/cosplusup/f018.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f019.jpg" data-full="media/cosplusup/f019.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f020.jpg" data-full="media/cosplusup/f020.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f021.jpg" data-full="media/cosplusup/f021.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f022.jpg" data-full="media/cosplusup/f022.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f023.jpg" data-full="media/cosplusup/f023.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f024.jpg" data-full="media/cosplusup/f024.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f025.jpg" data-full="media/cosplusup/f025.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f026.jpg" data-full="media/cosplusup/f026.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f027.jpg" data-full="media/cosplusup/f027.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f028.jpg" data-full="media/cosplusup/f028.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f029.jpg" data-full="media/cosplusup/f029.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f030.jpg" data-full="media/cosplusup/f030.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f031.jpg" data-full="media/cosplusup/f031.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f032.jpg" data-full="media/cosplusup/f032.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f033.jpg" data-full="media/cosplusup/f033.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f034.jpg" data-full="media/cosplusup/f034.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f035.jpg" data-full="media/cosplusup/f035.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f036.jpg" data-full="media/cosplusup/f036.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f037.jpg" data-full="media/cosplusup/f037.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f038.jpg" data-full="media/cosplusup/f038.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f039.jpg" data-full="media/cosplusup/f039.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f040.jpg" data-full="media/cosplusup/f040.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f041.jpg" data-full="media/cosplusup/f041.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f042.jpg" data-full="media/cosplusup/f042.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f043.jpg" data-full="media/cosplusup/f043.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f044.jpg" data-full="media/cosplusup/f044.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f045.jpg" data-full="media/cosplusup/f045.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f046.jpg" data-full="media/cosplusup/f046.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f047.jpg" data-full="media/cosplusup/f047.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f048.jpg" data-full="media/cosplusup/f048.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f049.jpg" data-full="media/cosplusup/f049.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f050.jpg" data-full="media/cosplusup/f050.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f051.jpg" data-full="media/cosplusup/f051.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f052.jpg" data-full="media/cosplusup/f052.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f053.jpg" data-full="media/cosplusup/f053.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f054.jpg" data-full="media/cosplusup/f054.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f055.jpg" data-full="media/cosplusup/f055.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f056.jpg" data-full="media/cosplusup/f056.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f057.jpg" data-full="media/cosplusup/f057.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f058.jpg" data-full="media/cosplusup/f058.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f059.jpg" data-full="media/cosplusup/f059.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f060.jpg" data-full="media/cosplusup/f060.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f061.jpg" data-full="media/cosplusup/f061.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f062.jpg" data-full="media/cosplusup/f062.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f063.jpg" data-full="media/cosplusup/f063.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f064.jpg" data-full="media/cosplusup/f064.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f065.jpg" data-full="media/cosplusup/f065.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f066.jpg" data-full="media/cosplusup/f066.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f067.jpg" data-full="media/cosplusup/f067.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f068.jpg" data-full="media/cosplusup/f068.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f069.jpg" data-full="media/cosplusup/f069.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f070.jpg" data-full="media/cosplusup/f070.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f071.jpg" data-full="media/cosplusup/f071.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f072.jpg" data-full="media/cosplusup/f072.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f073.jpg" data-full="media/cosplusup/f073.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f074.jpg" data-full="media/cosplusup/f074.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f075.jpg" data-full="media/cosplusup/f075.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f076.jpg" data-full="media/cosplusup/f076.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f077.jpg" data-full="media/cosplusup/f077.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f078.jpg" data-full="media/cosplusup/f078.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f079.jpg" data-full="media/cosplusup/f079.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f080.jpg" data-full="media/cosplusup/f080.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f081.jpg" data-full="media/cosplusup/f081.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f082.jpg" data-full="media/cosplusup/f082.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f083.jpg" data-full="media/cosplusup/f083.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f084.jpg" data-full="media/cosplusup/f084.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f085.jpg" data-full="media/cosplusup/f085.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f086.jpg" data-full="media/cosplusup/f086.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f087.jpg" data-full="media/cosplusup/f087.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f088.jpg" data-full="media/cosplusup/f088.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f089.jpg" data-full="media/cosplusup/f089.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f090.jpg" data-full="media/cosplusup/f090.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f091.jpg" data-full="media/cosplusup/f091.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f092.jpg" data-full="media/cosplusup/f092.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f093.jpg" data-full="media/cosplusup/f093.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f094.jpg" data-full="media/cosplusup/f094.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f095.jpg" data-full="media/cosplusup/f095.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f096.jpg" data-full="media/cosplusup/f096.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f097.jpg" data-full="media/cosplusup/f097.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f098.jpg" data-full="media/cosplusup/f098.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f099.jpg" data-full="media/cosplusup/f099.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f100.jpg" data-full="media/cosplusup/f100.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f101.jpg" data-full="media/cosplusup/f101.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f102.jpg" data-full="media/cosplusup/f102.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f103.jpg" data-full="media/cosplusup/f103.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f104.jpg" data-full="media/cosplusup/f104.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f105.jpg" data-full="media/cosplusup/f105.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f106.jpg" data-full="media/cosplusup/f106.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f107.jpg" data-full="media/cosplusup/f107.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f108.jpg" data-full="media/cosplusup/f108.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f109.jpg" data-full="media/cosplusup/f109.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f110.jpg" data-full="media/cosplusup/f110.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f111.jpg" data-full="media/cosplusup/f111.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f112.jpg" data-full="media/cosplusup/f112.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f113.jpg" data-full="media/cosplusup/f113.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f114.jpg" data-full="media/cosplusup/f114.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f115.jpg" data-full="media/cosplusup/f115.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f116.jpg" data-full="media/cosplusup/f116.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f117.jpg" data-full="media/cosplusup/f117.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f118.jpg" data-full="media/cosplusup/f118.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f119.jpg" data-full="media/cosplusup/f119.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f120.jpg" data-full="media/cosplusup/f120.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f121.jpg" data-full="media/cosplusup/f121.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f122.jpg" data-full="media/cosplusup/f122.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f123.jpg" data-full="media/cosplusup/f123.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f124.jpg" data-full="media/cosplusup/f124.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f125.jpg" data-full="media/cosplusup/f125.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f126.jpg" data-full="media/cosplusup/f126.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f127.jpg" data-full="media/cosplusup/f127.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f128.jpg" data-full="media/cosplusup/f128.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f129.jpg" data-full="media/cosplusup/f129.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f130.jpg" data-full="media/cosplusup/f130.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f131.jpg" data-full="media/cosplusup/f131.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f132.jpg" data-full="media/cosplusup/f132.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f133.jpg" data-full="media/cosplusup/f133.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f134.jpg" data-full="media/cosplusup/f134.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f135.jpg" data-full="media/cosplusup/f135.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f136.jpg" data-full="media/cosplusup/f136.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f137.jpg" data-full="media/cosplusup/f137.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f138.jpg" data-full="media/cosplusup/f138.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f139.jpg" data-full="media/cosplusup/f139.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f140.jpg" data-full="media/cosplusup/f140.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f141.jpg" data-full="media/cosplusup/f141.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f142.jpg" data-full="media/cosplusup/f142.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f143.jpg" data-full="media/cosplusup/f143.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f144.jpg" data-full="media/cosplusup/f144.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f145.jpg" data-full="media/cosplusup/f145.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f146.jpg" data-full="media/cosplusup/f146.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f147.jpg" data-full="media/cosplusup/f147.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f148.jpg" data-full="media/cosplusup/f148.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f149.jpg" data-full="media/cosplusup/f149.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f150.jpg" data-full="media/cosplusup/f150.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f151.jpg" data-full="media/cosplusup/f151.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f152.jpg" data-full="media/cosplusup/f152.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f153.jpg" data-full="media/cosplusup/f153.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f154.jpg" data-full="media/cosplusup/f154.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f155.jpg" data-full="media/cosplusup/f155.jpg" width="480" height="320" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+  <img src="media/cosplusup/mini/f156.jpg" data-full="media/cosplusup/f156.jpg" width="320" height="480" alt="Palco do Anime Se BH 2014 - foto de Marcella Santos / Cos+Up" loading="lazy">
+</section>
+
+<div class="grow"></div>
+
+<footer class="stage-wrap foot-wrap">
+  <div class="stage">
+    <a class="el bulb-small" href="index.html" aria-label="Weslei Abreu - início" style="--x:15;--y:-12;--w:118;--h:132">
+      <img src="img/logo-lampada.png" alt="">
+    </a>
+    <div class="group socials">
+      <a class="el social" href="https://www.instagram.com/wix" target="_blank" rel="noopener" aria-label="Instagram" style="--x:31;--y:108;--w:39;--h:39">
+        <img src="media/icone-instagram.png" alt="">
+      </a>
+      <a class="el social" href="https://www.facebook.com/wix" target="_blank" rel="noopener" aria-label="Facebook" style="--x:80;--y:108;--w:39;--h:39">
+        <img src="media/icone-facebook.png" alt="">
+      </a>
+    </div>
+    <a class="el phone" href="https://wa.me/5565993523978" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp: (65) 99352-3978" style="--x:637;--y:108;--w:210;--h:40">65 - 993523978</a>
+    <a class="el whatsapp" href="https://wa.me/5565993523978" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" style="--x:847;--y:52;--w:102;--h:106">
+      <img src="media/img-c511141584-98f7b3.png" alt="WhatsApp">
+    </a>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

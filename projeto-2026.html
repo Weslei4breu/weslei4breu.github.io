@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projeto 2026 | To Fora da Casinha | Weslei Abreu</title>
+<meta name="description" content="Projeto 2026 do To Fora da Casinha: samba de roda em prol da castração de animais de rua em Chapada dos Guimarães. Seja um patrocinador da 3ª edição.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@400;700&family=Figtree:wght@300;400&family=Oswald:wght@700&family=Playfair+Display&family=Poppins:wght@600&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  :root { --bg-opacity: 0; }
+  /* Projeto 2026: as cores e o ritmo da apresentação de patrocínio */
+  .proj {
+    --cream: #fff4de;
+    --orange: #f6a31e;
+    --brown: #2b1300;
+    --red: #c2321b;
+    --gold: #ffd76a;
+    --ink: #3d2410;
+    flex: none;
+    font: 400 18px/1.6 "Nunito", var(--sans);
+    color: var(--ink);
+  }
+  .pj { padding: 88px 24px; }
+  .pj-tight { padding-top: 0; }
+  .pj-in { max-width: 1000px; margin: 0 auto; }
+  .pj p { margin: 0 0 16px; }
+  .pj b { font-weight: 800; }
+  .pj figure { margin: 0; }
+
+  .pj-cream { background: var(--cream); }
+  .pj-red { background: var(--red); color: #fff4de; }
+  .pj-dark { background: var(--brown); color: #fff4de; }
+  .pj-orange-bg { background: var(--orange); }
+  .pj-hero { background: radial-gradient(circle at 70% 25%, #ffd76a, #f6a31e 55%, #e8850f); }
+  .pj-center { text-align: center; }
+
+  .pj-kicker { font: 800 15px/1.2 "Nunito", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+  .pj-red .pj-kicker, .pj-gold { color: var(--gold); }
+  .pj-brown { color: #6b2a0c; }
+  .pj-redtxt { color: var(--red); }
+  .pj-orange { color: var(--orange); }
+
+  .pj-h { margin: 0 0 24px; font: 600 clamp(30px, 4.4vw, 48px)/1.1 "Fredoka", sans-serif; color: var(--brown); }
+  .pj-red .pj-h, .pj-dark .pj-h { color: #fff4de; }
+  .pj-dark .pj-h.pj-gold { color: var(--gold); }
+  .pj-mega {
+    margin: 0 0 20px;
+    font: 700 clamp(48px, 9vw, 104px)/.95 "Fredoka", sans-serif;
+    color: #fff4de;
+    text-shadow: 4px 5px 0 var(--brown);
+  }
+  .pj-mega.pj-gold { color: var(--gold); text-shadow: 4px 5px 0 #7a3a10; }
+  .pj-pre { font: 700 clamp(24px, 3vw, 34px)/1 "Fredoka", sans-serif; color: #fff4de; text-shadow: 2px 3px 0 var(--brown); }
+  .pj-script { margin: 0 0 12px; font: 400 clamp(26px, 3.4vw, 38px)/1.2 "Kaushan Script", cursive; color: var(--brown); }
+  .pj-red .pj-script, .pj-dark .pj-script.pj-orange { color: var(--orange); }
+  .pj-lead { font-size: clamp(19px, 2.2vw, 24px); }
+  .pj-center .pj-lead { max-width: 760px; margin: 0 auto 28px; }
+
+  .pj-back {
+    display: inline-block;
+    margin-bottom: 40px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(43, 19, 0, .85);
+    color: #fff4de;
+    font: 700 15px/1 "Nunito", sans-serif;
+  }
+  .pj-back:hover { background: var(--brown); }
+  .pj-pill {
+    display: inline-block;
+    margin: 4px 0 24px !important;
+    padding: 14px 30px;
+    border-radius: 999px;
+    background: var(--brown);
+    color: #fff4de;
+    font: 800 clamp(17px, 2.4vw, 26px)/1.2 "Nunito", sans-serif;
+  }
+
+  /* Texto e foto lado a lado */
+  .pj-split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+  .pj-rev { grid-template-columns: .9fr 1.1fr; }
+  .pj-photo, .pj-poster, .pj-flyer { cursor: zoom-in; }
+  .pj-photo.pj-wide img { aspect-ratio: 526 / 368; }
+  .pj-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .28);
+  }
+
+  /* Edições anteriores */
+  .pj-eds { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .pj-ed {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 22px;
+    padding: 22px;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 6px 0 #e8c77e;
+  }
+  .pj-poster img { display: block; width: 100%; border-radius: 12px; }
+  .pj-date { font: 800 19px/1.3 "Nunito", sans-serif; color: var(--brown); }
+  .pj-plain { margin: 0; padding: 0; list-style: none; font-size: 17px; }
+  .pj-plain li { margin-bottom: 8px; }
+
+  /* Galeria */
+  .pj-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .pj-gallery img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 538 / 380;
+    object-fit: cover;
+    border-radius: 18px;
+    cursor: zoom-in;
+    transition: transform .25s ease;
+  }
+  .pj-gallery img:hover { transform: scale(1.03); }
+
+  /* Passo a passo */
+  .pj-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin: 0; padding: 0; list-style: none; }
+  .pj-steps li {
+    position: relative;
+    padding: 26px 24px 30px;
+    border-radius: 24px;
+    background: var(--orange);
+    color: var(--brown);
+    font: 800 19px/1.35 "Nunito", sans-serif;
+  }
+  .pj-steps li:not(:last-child)::after {
+    content: "\2192";
+    position: absolute;
+    right: -32px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--red);
+    font-size: 26px;
+  }
+  .pj-steps span { display: block; margin-bottom: 14px; font: 600 54px/1 "Fredoka", sans-serif; }
+  .pj-steps .pj-step-end { background: var(--brown); color: var(--gold); }
+
+  /* Ganhos do patrocinador */
+  .pj-gains { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 0; padding: 0; list-style: none; }
+  .pj-gains li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 26px;
+    border-radius: 20px;
+    background: #fff;
+    color: var(--brown);
+    font: 800 19px/1.35 "Nunito", sans-serif;
+  }
+  .pj-gains li::before { content: ""; flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--orange); }
+
+  /* Formas de apoiar */
+  .pj-ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .pj-ways > div { padding: 30px 28px; border-radius: 24px; background: var(--cream); }
+  .pj-ways > div::before { content: ""; display: block; width: 44px; height: 44px; margin-bottom: 18px; border-radius: 50%; background: var(--red); }
+  .pj-ways p { margin: 0; }
+
+  /* 3a edição */
+  .pj-flyer img { display: block; width: 100%; max-width: 440px; margin: 0 auto; }
+  .pj-list { margin: 0 0 22px; padding-left: 22px; font-size: 20px; }
+  .pj-list li { margin-bottom: 8px; }
+  .pj-list li::marker { color: var(--orange); }
+  .pj-note { font: 800 20px/1.3 "Nunito", sans-serif; color: var(--orange); }
+
+  /* Contato */
+  .pj-end .pj-mega { color: #fff4de; }
+  .pj-end .pj-lead { color: var(--brown); }
+  .pj-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+    padding: 16px 28px;
+    border-radius: 999px;
+    background: var(--brown);
+    color: #fff4de;
+    font: 800 clamp(18px, 2.2vw, 24px)/1 "Nunito", sans-serif;
+    transition: transform .2s ease, background .2s ease;
+  }
+  .pj-cta:hover { transform: translateY(-2px); background: #451f02; }
+  .pj-cta svg { width: 28px; height: 28px; fill: #25d366; flex: none; }
+  .pj-logo { text-align: center; }
+  .pj-logo img { width: 100%; max-width: 300px; }
+  .pj-logo .pj-script { margin-top: 10px; }
+
+
+  @media (max-width: 820px) {
+    .pj { padding: 60px 18px; }
+    .pj-tight { padding-top: 0; }
+    .pj-split, .pj-rev, .pj-eds, .pj-gains, .pj-ways { grid-template-columns: 1fr; gap: 28px; }
+    .pj-rev > figure { order: 2; }
+    .pj-steps { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .pj-steps li:not(:last-child)::after { display: none; }
+    .pj-gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .pj-gallery img { border-radius: 12px; }
+  }
+  @media (max-width: 480px) {
+    .pj-ed { grid-template-columns: 110px 1fr; gap: 16px; padding: 16px; }
+    .pj-steps { grid-template-columns: 1fr; }
+    .pj-pill { padding: 12px 20px; }
+  }
+  /* Logo da parceira, numa moldura dourada como na apresentação */
+  .pj-parceiro img {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    border: 6px solid #ffd76a;
+    border-radius: 28px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+  }
+  .pj-dark .pj-date { margin-bottom: 18px; color: var(--gold); font: 700 clamp(22px, 2.6vw, 28px)/1.2 "Fredoka", sans-serif; }
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+
+<header class="stage-wrap head-wrap" id="top">
+  <div class="stage">
+    <a class="el logo" href="index.html" aria-label="Início" style="--x:437;--y:0;--w:141;--h:162">
+      <img src="img/logo-lampada.png" alt="">
+    </a>
+    <p class="el name" style="--x:16;--y:30;--w:964;--h:135"><a href="index.html">WESLEI&nbsp;&nbsp;ABREU</a></p>
+    <nav class="el roles" style="--x:104;--y:202">
+      <a href="portifolio.html">Designer</a>
+      <span class="sep">*</span>
+      <a href="produtor.html">Produtor</a>
+      <span class="sep">*</span>
+      <span>Social Media</span>
+      <span class="sep">*</span>
+      <a href="dev-e-ti.html">TI</a>
+    </nav>
+  </div>
+</header>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Kaushan+Script&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<main class="proj">
+
+  <!-- Capa -->
+  <section class="pj pj-hero">
+    <div class="pj-in">
+      <a class="pj-back" href="to-fora-da-casinha.html">&larr; To Fora da Casinha</a>
+      <p class="pj-pre">Samba de Roda</p>
+      <h1 class="pj-mega">Tô Fora<br>da Casinha</h1>
+      <p class="pj-pill">Em prol da castração de animais de rua</p>
+      <p class="pj-script">Projeto 2026 · Proposta de patrocínio · 3ª edição</p>
+    </div>
+  </section>
+
+  <!-- O evento -->
+  <section class="pj pj-cream">
+    <div class="pj-in pj-split">
+      <div>
+        <p class="pj-kicker">O evento</p>
+        <h2 class="pj-h">Samba, comida boa e solidariedade</h2>
+        <p>Um samba de roda ao vivo com o <b>Clube do Chorinho</b>, comida caseira e rifas com prêmios doados por empresas da cidade.</p>
+        <p>Toda a renda vai para a <b>castração de animais de rua</b> em Chapada dos Guimarães.</p>
+      </div>
+      <figure class="pj-photo" data-full="media/full-d254ce7cf2.jpg" role="button" tabindex="0" aria-label="Ampliar: locutor no microfone durante o evento">
+        <img src="media/full-d254ce7cf2.jpg" alt="Locutor no microfone durante o To Fora da Casinha" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Por que castração -->
+  <section class="pj pj-red">
+    <div class="pj-in pj-split pj-rev">
+      <figure class="pj-photo pj-wide" data-full="img/projeto-2026/galeria-2.jpg" role="button" tabindex="0" aria-label="Ampliar: equipe da cozinha com a camiseta do evento">
+        <img src="img/projeto-2026/galeria-2.jpg" alt="Equipe da cozinha com a camiseta do To Fora da Casinha" loading="lazy">
+      </figure>
+      <div>
+        <p class="pj-kicker">Por que castração</p>
+        <h2 class="pj-h">Castrar é o jeito mais humano de diminuir o abandono nas ruas.</h2>
+        <p>Menos ninhadas sem lar, menos animais doentes e famintos, mais bichos com chance de adoção.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Para onde vai o dinheiro -->
+  <section class="pj pj-dark">
+    <div class="pj-in pj-split pj-rev">
+      <figure class="pj-parceiro">
+        <img src="img/projeto-2026/eco-vidas.jpg" alt="Logo da Eco Vidas, parceira do Tô Fora da Casinha" loading="lazy">
+      </figure>
+      <div>
+        <p class="pj-kicker pj-gold">Para onde vai o dinheiro</p>
+        <h2 class="pj-mega pj-gold">Eco Vidas</h2>
+        <p class="pj-lead">Toda a renda do Tô Fora da Casinha é doada à <b>Eco Vidas</b>, nossa parceira, para a castração de animais de rua.</p>
+        <p class="pj-script pj-orange">Quem patrocina, ajuda a castrar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossa história -->
+  <section class="pj pj-cream">
+    <div class="pj-in">
+      <p class="pj-kicker">Nossa história</p>
+      <h2 class="pj-h">Duas edições, casa cheia nas duas</h2>
+      <div class="pj-eds">
+        <article class="pj-ed">
+          <figure class="pj-poster" data-full="media/img-965a3a802c-385593.jpg" role="button" tabindex="0" aria-label="Ampliar: cartaz da 1ª edição">
+            <img src="media/img-965a3a802c-563ed2.jpg" alt="Cartaz da 1ª edição" loading="lazy">
+          </figure>
+          <div>
+            <h3 class="pj-script pj-redtxt">1ª edição</h3>
+            <p class="pj-date">Domingo, 9 de julho de 2023</p>
+            <ul class="pj-plain">
+              <li>Mangueiras Café Bar, Centro</li>
+              <li>Feijoada beneficente tradicional e vegana</li>
+              <li>Clube do Chorinho ao vivo</li>
+            </ul>
+          </div>
+        </article>
+        <article class="pj-ed">
+          <figure class="pj-poster" data-full="media/img-f9244923eb-180cb6.jpg" role="button" tabindex="0" aria-label="Ampliar: cartaz da 2ª edição">
+            <img src="media/img-f9244923eb-762ea6.jpg" alt="Cartaz da 2ª edição" loading="lazy">
+          </figure>
+          <div>
+            <h3 class="pj-script pj-redtxt">2ª edição</h3>
+            <p class="pj-date">Sábado, 2 de dezembro de 2023</p>
+            <ul class="pj-plain">
+              <li>Salão da Paróquia, Santuário de Sant'Anna</li>
+              <li>Buffet de massas</li>
+              <li>Clube do Chorinho ao vivo</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section class="pj pj-dark">
+    <div class="pj-in">
+      <h2 class="pj-h pj-gold">Gente do bem, música e muita alegria</h2>
+      <div class="pj-gallery">
+        <img src="img/projeto-2026/galeria-1.jpg" data-full="img/projeto-2026/galeria-1.jpg" alt="Público no evento" loading="lazy">
+        <img src="media/full-334ff35639.jpg" data-full="media/full-334ff35639.jpg" alt="Mesa da rifa com os prêmios doados" loading="lazy">
+        <img src="img/projeto-2026/galeria-3.jpg" data-full="img/projeto-2026/galeria-3.jpg" alt="Público nas mesas" loading="lazy">
+        <img src="img/projeto-2026/galeria-4.jpg" data-full="img/projeto-2026/galeria-4.jpg" alt="Participantes sorrindo" loading="lazy">
+        <img src="img/projeto-2026/galeria-5.jpg" data-full="img/projeto-2026/galeria-5.jpg" alt="Amigas no evento" loading="lazy">
+        <img src="img/projeto-2026/galeria-6.jpg" data-full="img/projeto-2026/galeria-6.jpg" alt="Casal no evento" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section class="pj pj-cream">
+    <div class="pj-in">
+      <p class="pj-kicker">Como funciona</p>
+      <h2 class="pj-h">Seu produto vira castração</h2>
+      <ol class="pj-steps">
+        <li><span>1</span>A empresa doa um produto ou serviço</li>
+        <li><span>2</span>O item vira prêmio da rifa</li>
+        <li><span>3</span>A rifa é vendida antes e durante o evento</li>
+        <li class="pj-step-end"><span>4</span>O valor vai para a Eco Vidas castrar</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- O que sua marca ganha -->
+  <section class="pj pj-cream pj-tight">
+    <div class="pj-in">
+      <p class="pj-kicker">Para o patrocinador</p>
+      <h2 class="pj-h">O que sua marca ganha</h2>
+      <ul class="pj-gains">
+        <li>Logo no flyer e nos posts do evento</li>
+        <li>Agradecimento ao vivo no microfone</li>
+        <li>Prêmio da rifa anunciado com o nome da sua empresa</li>
+        <li>Marca ligada à causa animal em Chapada</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Formas de apoiar -->
+  <section class="pj pj-orange-bg">
+    <div class="pj-in">
+      <p class="pj-kicker pj-brown">Formas de apoiar</p>
+      <h2 class="pj-h">Cada um ajuda do seu jeito</h2>
+      <div class="pj-ways">
+        <div><h3 class="pj-script">Prêmio para a rifa</h3><p>Um produto, voucher ou serviço da sua empresa.</p></div>
+        <div><h3 class="pj-script">Insumos</h3><p>Ingredientes da feijoada, bebidas, descartáveis.</p></div>
+        <div><h3 class="pj-script">Serviços</h3><p>Som, impressão, camisetas, divulgação.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3a edição -->
+  <section class="pj pj-dark">
+    <div class="pj-in pj-split">
+      <figure class="pj-flyer" data-full="img/projeto-2026/cartaz-3a-edicao.jpg" role="button" tabindex="0" aria-label="Ampliar: cartaz da 3ª edição">
+        <img src="img/projeto-2026/cartaz-3a-edicao.jpg" alt="Cartaz da 3ª edição do To Fora da Casinha: domingo, 6 de dezembro, ingresso R$ 85, renda doada à Eco Vidas" loading="lazy">
+      </figure>
+      <div>
+        <p class="pj-kicker pj-gold">Vem aí</p>
+        <h2 class="pj-mega pj-gold">3ª edição</h2>
+        <p class="pj-date pj-gold">Domingo, 6 de dezembro</p>
+        <ul class="pj-list">
+          <li>Samba de roda com o Clube do Chorinho</li>
+          <li>Feijoada beneficente tradicional e vegana</li>
+          <li>Mangueiras Café Bar, Centro</li>
+          <li>Rifas com prêmios dos patrocinadores</li>
+        </ul>
+        <p class="pj-note">Ingresso: R$ 85,00</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section class="pj pj-hero pj-end">
+    <div class="pj-in pj-split">
+      <div>
+        <h2 class="pj-mega">Vamos juntos?</h2>
+        <p class="pj-lead">Coloque sua marca nessa roda e ajude a tirar mais bichinhos da rua.</p>
+        <a class="pj-cta" href="https://wa.me/5565993523978?text=Quero%20patrocinar%20o%20T%C3%B4%20Fora%20da%20Casinha%202026" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+          WhatsApp (65) 99352-3978
+        </a>
+      </div>
+      <figure class="pj-logo">
+        <img src="img/projeto-2026/w-eventos.png" alt="Logo W Eventos">
+        <figcaption class="pj-script">W Eventos</figcaption>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<div class="grow"></div>
+
+<footer class="stage-wrap foot-wrap">
+  <div class="stage">
+    <a class="el bulb-small" href="index.html" aria-label="Weslei Abreu - início" style="--x:15;--y:-12;--w:118;--h:132">
+      <img src="img/logo-lampada.png" alt="">
+    </a>
+    <div class="group socials">
+      <a class="el social" href="https://www.instagram.com/wix" target="_blank" rel="noopener" aria-label="Instagram" style="--x:31;--y:108;--w:39;--h:39">
+        <img src="media/icone-instagram.png" alt="">
+      </a>
+      <a class="el social" href="https://www.facebook.com/wix" target="_blank" rel="noopener" aria-label="Facebook" style="--x:80;--y:108;--w:39;--h:39">
+        <img src="media/icone-facebook.png" alt="">
+      </a>
+    </div>
+    <a class="el phone" href="https://wa.me/5565993523978" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp: (65) 99352-3978" style="--x:637;--y:108;--w:210;--h:40">65 - 993523978</a>
+    <a class="el whatsapp" href="https://wa.me/5565993523978" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" style="--x:847;--y:52;--w:102;--h:106">
+      <img src="media/img-c511141584-98f7b3.png" alt="WhatsApp">
+    </a>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

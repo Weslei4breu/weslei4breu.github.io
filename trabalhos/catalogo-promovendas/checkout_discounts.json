@@ -1,0 +1,16 @@
+{
+  "payment": [
+    {"key": "avista", "label": "À Vista", "percent": 4},
+    {"key": "pix", "label": "PIX", "percent": 4},
+    {"key": "d30", "label": "30 dias", "percent": 0},
+    {"key": "d60", "label": "60 dias", "percent": 0},
+    {"key": "d90", "label": "90 dias", "percent": 0}
+  ],
+  "tiers": [
+    {"key": "gold_start", "label": "Gold Start", "percent": 0},
+    {"key": "gold", "label": "Gold", "percent": 3},
+    {"key": "diamond", "label": "Diamond", "percent": 5},
+    {"key": "platinum", "label": "Platinum", "percent": 8},
+    {"key": "black", "label": "Black", "percent": 12}
+  ]
+}

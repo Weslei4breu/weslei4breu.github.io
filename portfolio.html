@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio de Produtor | Weslei Abreu</title>
+<meta name="description" content="Portfólio de produtor cultural de Weslei Abreu: Anime Betim, Anime-se, Tô Fora da Casinha, Circo na Escola e produção audiovisual em Chapada dos Guimarães.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@400;700&family=Figtree:wght@300;400;600&family=Oswald:wght@700&family=Playfair+Display&family=Poppins:wght@600&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  :root { --bg-opacity: 0.18; --amber: #ffb02e; --copper-lt: #e0a57f; }
+
+  /* ---------- Conteúdo em fluxo (o portfólio é longo) ---------- */
+  .pf { width: 100%; max-width: 980px; margin: 0 auto; padding: 26px 20px 60px; font-family: var(--sans); }
+  .pf-plate-wrap { display: flex; justify-content: center; margin: 4px 0 26px; }
+  .pf-plate-wrap .plate { position: relative; width: min(820px, 100%); height: 88px; }
+  @media (max-width: 640px) { .pf-plate-wrap .plate { height: auto; padding: 14px 22px; } }
+  .pf-intro { font: 400 16px/1.75 var(--sans); text-align: justify; margin: 0 0 18px; }
+  .pf-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 22px 0 8px; }
+  .pf-actions .btn-tech { position: relative; min-width: 220px; height: 50px; }
+
+  .pf-nav { position: sticky; top: 0; z-index: 6; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px;
+    margin: 30px -20px 0; padding: 12px 20px; background: rgba(8, 8, 8, .92); border-bottom: 1px solid rgba(191, 121, 81, .35);
+    font: 600 14px/1.2 "Rajdhani", sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+  .pf-nav a { color: #ffc04a; padding: 4px 2px; }
+  .pf-nav a:hover { color: #fff4dc; text-shadow: 0 0 10px rgba(255, 176, 46, .85); }
+
+  .pf-sec { padding-top: 46px; scroll-margin-top: 50px; }
+  .pf-sec > h2 { font: 400 34px/1.25 "Cinzel", serif; letter-spacing: 4px; text-align: center; margin: 0 0 8px; }
+  .pf-sec > .pf-lead { text-align: center; color: #cfcfcf; margin: 0 auto 24px; max-width: 760px; font: 400 15px/1.6 var(--sans); }
+  .pf-sec > .pf-lead::after { content: ""; display: block; width: 90px; height: 2px; margin: 18px auto 0; background: var(--copper); }
+
+  /* Cartões clicáveis (eventos / projetos) */
+  .ev-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 20px; }
+  /* Atuação em Chapada: poucos cartões, centralizados com a mesma largura dos festivais */
+  #grid-chapada { display: flex; flex-wrap: wrap; justify-content: center; }
+  #grid-chapada > * { flex: 0 1 220px; }
+  @media (max-width: 480px) { #grid-chapada > * { flex-basis: 100%; } }
+  .ev-card { position: relative; display: flex; flex-direction: column; text-align: left; padding: 0; border: 0; cursor: pointer;
+    background: rgba(8, 8, 8, .72); border-left: 4px solid var(--copper); border-radius: 6px; overflow: hidden; color: var(--white);
+    font-family: var(--sans); transition: transform .2s ease, box-shadow .2s ease; }
+  .ev-card:hover, .ev-card:focus-visible { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 176, 46, .45); outline: none; }
+  .ev-card .thumb { width: 100%; aspect-ratio: 4 / 3; background: #111 center / cover no-repeat; }
+  .ev-card .meta { padding: 12px 14px 16px; }
+  .ev-card .tag { display: inline-block; font: 600 12px/1 "Rajdhani", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #ffc04a; margin-bottom: 6px; }
+  .ev-card h3 { margin: 0 0 4px; font: 700 19px/1.2 "Cinzel", serif; color: var(--copper-lt); }
+  .ev-card p { margin: 0; font: 400 13.5px/1.45 var(--sans); color: #d8d8d8; }
+  .ev-card .open { position: absolute; right: 10px; top: 10px; padding: 5px 9px; background: rgba(8, 8, 8, .78);
+    font: 600 11px/1 "Rajdhani", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #ffc04a; border: 1px solid rgba(255, 176, 46, .6); }
+
+  /* Galerias com zoom */
+  .gal { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; }
+  .gal.wide { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+  .gal figure { margin: 0; }
+  .gal button.zim { display: block; width: 100%; padding: 0; border: 1px solid rgba(255, 255, 255, .12); background: #111; cursor: zoom-in; border-radius: 4px; overflow: hidden; }
+  .gal img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform .25s ease, filter .25s ease; }
+  .gal.land img { aspect-ratio: 4 / 3; }
+  .gal.contain img { object-fit: contain; background: #0d0d0d; }
+  .gal button.zim:hover img { transform: scale(1.04); filter: brightness(1.1); }
+  .gal figcaption { margin-top: 7px; font: 400 13px/1.4 var(--sans); color: #cfcfcf; }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 0 0 26px; }
+  .fact { padding: 16px; text-align: center; background: rgba(8, 8, 8, .72); border-top: 3px solid var(--copper); border-radius: 6px; }
+  .fact b { display: block; font: 400 32px/1.1 "Anton", sans-serif; color: #ffc04a; letter-spacing: 1px; }
+  .fact span { font: 400 13px/1.35 var(--sans); color: #d8d8d8; }
+
+  .vids { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+  .vid { padding: 0; border: 0; text-align: left; cursor: pointer; background: rgba(8, 8, 8, .72); border-left: 4px solid var(--copper); border-radius: 6px; overflow: hidden; color: var(--white); font-family: var(--sans); }
+  .vid .vthumb { position: relative; aspect-ratio: 16 / 9; background: #000 center / cover no-repeat; }
+  .vid .vthumb::after { content: "▶"; position: absolute; left: 50%; top: 50%; width: 58px; height: 58px; margin: -29px 0 0 -29px; border-radius: 50%;
+    background: rgba(8, 8, 8, .75); border: 2px solid var(--amber); color: #ffc04a; font: 22px/54px Arial, sans-serif; text-align: center; padding-left: 4px; box-sizing: border-box; }
+  .vid:hover .vthumb::after { background: rgba(255, 160, 40, .85); color: #000; }
+  .vid p { margin: 0; padding: 12px 14px 14px; font: 400 14px/1.45 var(--sans); }
+  .vid p small { display: block; margin-top: 3px; color: #ffc04a; font: 600 12px/1.2 "Rajdhani", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+
+  /* ---------- Caixa de diálogo de cada festival ---------- */
+  dialog.evd { width: min(1040px, 96vw); max-height: 92vh; padding: 0; border: 1px solid rgba(255, 176, 46, .55); border-radius: 8px;
+    background: #0b0b0b; color: var(--white); box-shadow: 0 30px 80px rgba(0, 0, 0, .85); font-family: var(--sans); overflow: hidden; }
+  dialog.evd::backdrop { background: rgba(0, 0, 0, .78); backdrop-filter: blur(3px); }
+  .evd-in { display: flex; flex-direction: column; max-height: 92vh; }
+  .evd-head { position: relative; display: flex; gap: 18px; align-items: center; padding: 18px 64px 14px 22px;
+    background: linear-gradient(180deg, rgba(191, 121, 81, .22), rgba(8, 8, 8, 0)); border-bottom: 1px solid rgba(191, 121, 81, .35); }
+  .evd-head img { width: 74px; height: 74px; object-fit: cover; border-radius: 4px; border: 1px solid rgba(255, 255, 255, .15); flex: none; }
+  .evd-head h2 { margin: 0; font: 700 24px/1.2 "Cinzel", serif; color: var(--copper-lt); }
+  .evd-head p { margin: 4px 0 0; font: 400 14px/1.4 var(--sans); color: #d8d8d8; }
+  .evd-x { position: absolute; top: 12px; right: 12px; width: 42px; height: 42px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .12);
+    color: #fff; font: 28px/40px Arial, sans-serif; cursor: pointer; }
+  .evd-x:hover { background: rgba(255, 176, 46, .35); }
+  .evd-tabs { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 22px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
+  .evd-tabs button { position: relative; height: 38px; padding: 0 16px; }
+  .evd-tabs button[aria-selected="true"] { color: #fff4dc; text-shadow: 0 0 10px rgba(255, 176, 46, .85); }
+  .evd-tabs button[aria-selected="true"]::before { background: linear-gradient(180deg, rgba(255, 190, 80, .28), rgba(255, 140, 30, .1)), linear-gradient(180deg, rgba(16, 24, 36, .94), rgba(6, 10, 18, .94)); }
+  .evd-body { overflow: auto; padding: 20px 22px 26px; }
+  .evd-panel[hidden] { display: none; }
+  .evd-panel h3 { margin: 18px 0 10px; font: 700 13px/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: #cfa286; }
+  .evd-panel h3:first-child { margin-top: 0; }
+  .evd-panel p { margin: 0 0 12px; font: 400 15px/1.65 var(--sans); }
+  .about { display: grid; grid-template-columns: 300px 1fr; gap: 22px; align-items: start; }
+  .about .poster { padding: 0; border: 0; background: none; cursor: zoom-in; }
+  .about .poster img { display: block; width: 100%; border-radius: 4px; border: 1px solid rgba(255, 255, 255, .12); }
+  .kv { display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; margin: 0 0 14px; font: 400 15px/1.5 var(--sans); }
+  .kv dt { color: #ffc04a; font: 600 13px/1.6 "Rajdhani", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+  .kv dd { margin: 0; }
+  .prog { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .prog .card { padding: 14px 16px; }
+  .prog .card h3 { margin-bottom: 8px; }
+  .prog .card li { font-size: 14.5px; }
+  .cast { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; align-items: start; }
+  .artist { display: flex; flex-direction: column; background: rgba(255, 255, 255, .03); border-left: 3px solid var(--copper); border-radius: 6px; overflow: hidden; }
+  .artist .zim { padding: 0; border: 0; background: #0d0d0d; cursor: zoom-in; }
+  .artist .zim img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; }
+  .artist .info { padding: 12px 14px 14px; }
+  .artist h4 { margin: 0 0 4px; font: 700 17px/1.2 "Cinzel", serif; color: var(--copper-lt); }
+  .artist p { margin: 0; font: 400 13.5px/1.5 var(--sans); color: #dcdcdc; }
+  .artist .badge { display: inline-block; margin-top: 8px; font: 600 11px/1 "Rajdhani", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #ffc04a; }
+  .note { font: 400 13px/1.5 var(--sans); color: #a9a9a9; margin-top: 14px; }
+  .link-list { margin: 0; padding: 0; list-style: none; }
+  .link-list li { margin: 0 0 8px; }
+  .link-list a { color: var(--copper-lt); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* Lightbox próprio do portfólio (acima das caixas de diálogo) */
+  dialog.pf-lb, dialog.pf-vid { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; border: 0; color: #fff; }
+  dialog.pf-lb::backdrop, dialog.pf-vid::backdrop { background: rgba(0, 0, 0, .6); }
+  .pf-lb { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; padding: 24px 70px;
+    background: rgba(0, 0, 0, .94); cursor: zoom-out; }
+  .pf-lb[open] { display: flex; }
+  .pf-lb figure { margin: 0; display: flex; flex-direction: column; align-items: center; max-width: 100%; max-height: 100%; }
+  .pf-lb img { max-width: 100%; max-height: calc(100vh - 110px); object-fit: contain; cursor: default; }
+  .pf-lb figcaption { margin-top: 10px; max-width: 900px; text-align: center; font: 400 14px/1.45 var(--sans); color: #e6e6e6; }
+  .pf-lb .lb-btn { position: absolute; }
+  .pf-vid { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; padding: 24px; background: rgba(0, 0, 0, .94); }
+  .pf-vid[open] { display: flex; }
+  .pf-vid .frame { width: min(1000px, 100%); aspect-ratio: 16 / 9; background: #000; }
+  .pf-vid iframe { width: 100%; height: 100%; border: 0; }
+
+  @media (max-width: 720px) {
+    .about { grid-template-columns: 1fr; }
+    .about .poster { max-width: 340px; margin: 0 auto; }
+    .pf-sec > h2 { font-size: 26px; letter-spacing: 2px; }
+    .evd-head img { display: none; }
+    .pf-lb { padding: 56px 8px; }
+    .kv { grid-template-columns: 1fr; gap: 0 0; }
+    .kv dd { margin-bottom: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+
+<header class="stage-wrap head-wrap" id="top">
+  <div class="stage">
+    <a aria-label="Início" class="el logo" href="/" style="--x:437;--y:0;--w:141;--h:162">
+      <img src="img/logo-lampada.png" alt="">
+    </a>
+    <p class="el name" style="--x:16;--y:30;--w:964;--h:135"><a href="/">WESLEI&nbsp;&nbsp;ABREU</a></p>
+    <nav class="el roles" style="--x:104;--y:202">
+      <a href="/portifolio">Designer</a>
+      <span class="sep">*</span>
+      <a href="/produtor">Produtor</a>
+      <span class="sep">*</span>
+      <span>Social Media</span>
+      <span class="sep">*</span>
+      <a href="/dev-e-ti">TI</a>
+    </nav>
+  </div>
+</header>
+
+<main class="pf">
+  <div class="pf-plate-wrap">
+    <div class="plate">
+      <div class="vtext" data-text="Portfólio de Produtor" style="--w:420;--h:46"></div>
+    </div>
+  </div>
+
+  <p class="pf-intro">Produtor cultural com mais de 15 anos de experiência na concepção e realização de festivais de cultura pop, anime e geek, sempre com foco educacional, social e inclusivo. Desde 2009 levou a Minas Gerais dubladores, desenhistas e artistas de referência nacional, com oficinas, concursos e entrada solidária. Hoje atua em Chapada dos Guimarães (MT) na produção de eventos culturais com impacto social e de conteúdo audiovisual.</p>
+
+  <div class="facts">
+    <div class="fact"><b>7</b><span>edições do Anime Betim, de 2009 a 2014</span></div>
+    <div class="fact"><b>18+</b><span>dubladores, desenhistas e convidados contratados</span></div>
+    <div class="fact"><b>6 MIL</b><span>pessoas na 2ª edição (jornal Aqui Betim)</span></div>
+    <div class="fact"><b>840 KG</b><span>de alimentos doados nas duas edições documentadas: 420 kg no 1º festival e 45 cestas básicas na 2ª edição</span></div>
+  </div>
+
+  <div class="pf-actions">
+    <a class="btn btn-tech" id="pdf-btn" href="portfolio-media/Portfolio_Weslei_Abreu.pdf" target="_blank" rel="noopener">Baixar portfólio em PDF</a>
+    <a class="btn btn-tech" href="/produtor">Voltar para Produtor</a>
+  </div>
+
+  <nav class="pf-nav" aria-label="Seções do portfólio">
+    <a href="#chapada">Chapada</a><a href="#festivais">Festivais</a><a href="#casting">Casting</a>
+    <a href="#social">Ações sociais</a><a href="#imprensa">Imprensa</a><a href="#videos">Vídeos</a><a href="#documentos">Documentos</a>
+  </nav>
+
+  <section class="pf-sec" id="chapada">
+    <h2>Chapada dos Guimarães</h2>
+    <p class="pf-lead">Atuação cultural comprovada no município desde 2023. Clique em cada projeto para ver os detalhes.</p>
+    <div class="ev-grid" id="grid-chapada"></div>
+  </section>
+
+  <section class="pf-sec" id="festivais">
+    <h2>Festivais de Anime</h2>
+    <p class="pf-lead">Anime Betim (Betim, MG) e Anime-se (Belo Horizonte, MG). Cada festival abre com informações, casting e registros.</p>
+    <div class="ev-grid" id="grid-festivais"></div>
+  </section>
+
+  <section class="pf-sec" id="casting">
+    <h2>Casting</h2>
+    <p class="pf-lead">Artistas já contratados por Weslei Abreu (White Wolf Eventos). Clique nas fichas para ampliar.</p>
+    <div class="cast" id="cast-all"></div>
+  </section>
+
+  <section class="pf-sec" id="social">
+    <h2>Ações Sociais</h2>
+    <p class="pf-lead">A entrada solidária (1 kg de alimento não perecível) gerou doações registradas em documento.</p>
+    <div class="gal" id="gal-social"></div>
+  </section>
+
+  <section class="pf-sec" id="imprensa">
+    <h2>Imprensa</h2>
+    <p class="pf-lead">Matérias publicadas sobre os festivais.</p>
+    <div class="gal land contain" id="gal-imprensa"></div>
+    <ul class="link-list" style="margin-top:18px">
+      <li><a href="https://www.otempobetim.com.br/ultimas/anime-betim-acontece-neste-fim-de-semana-1.959864" target="_blank" rel="noopener">O Tempo Betim – matéria sobre a 7ª edição, com Marco Ribeiro</a></li>
+      <li><a href="https://mostramumia.blogspot.com/2010/05/anime-betim.html" target="_blank" rel="noopener">Mostra MUMIA – divulgação da 2ª edição (2010)</a></li>
+      <li><a href="http://animebetimblog.blogspot.com/" target="_blank" rel="noopener">Blog oficial do Anime Betim</a></li>
+    </ul>
+  </section>
+
+  <section class="pf-sec" id="videos">
+    <h2>Vídeos</h2>
+    <p class="pf-lead">Registros em vídeo dos eventos.</p>
+    <div class="vids" id="vids-all"></div>
+  </section>
+
+  <section class="pf-sec" id="documentos">
+    <h2>Documentos</h2>
+    <p class="pf-lead">Declarações das escolas que sediaram o Anime Betim, Lei de Fomento à Cultura de Betim e homologação no Ministério Público de Mato Grosso.</p>
+    <div class="gal" id="gal-docs"></div>
+  </section>
+</main>
+
+<div class="grow"></div>
+
+<footer class="stage-wrap foot-wrap">
+  <div class="stage">
+    <a aria-label="Weslei Abreu - início" class="el bulb-small" href="/" style="--x:15;--y:-12;--w:118;--h:132">
+      <img src="img/logo-lampada.png" alt="">
+    </a>
+    <div class="group socials">
+      <a class="el social" href="https://www.instagram.com/wix" target="_blank" rel="noopener" aria-label="Instagram" style="--x:31;--y:108;--w:39;--h:39">
+        <img src="media/icone-instagram.png" alt="">
+      </a>
+      <a class="el social" href="https://www.facebook.com/wix" target="_blank" rel="noopener" aria-label="Facebook" style="--x:80;--y:108;--w:39;--h:39">
+        <img src="media/icone-facebook.png" alt="">
+      </a>
+    </div>
+    <a class="el phone" href="https://wa.me/5565993523978" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp: (65) 99352-3978" style="--x:637;--y:108;--w:210;--h:40">65 - 993523978</a>
+    <a class="el whatsapp" href="https://wa.me/5565993523978" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp" style="--x:847;--y:52;--w:102;--h:106">
+      <img src="media/img-c511141584-98f7b3.png" alt="WhatsApp">
+    </a>
+  </div>
+</footer>
+
+<dialog class="evd" id="evd" aria-labelledby="evd-title">
+  <div class="evd-in">
+    <div class="evd-head">
+      <img id="evd-img" src="" alt="">
+      <div><h2 id="evd-title"></h2><p id="evd-sub"></p></div>
+      <button class="evd-x" type="button" aria-label="Fechar">×</button>
+    </div>
+    <div class="evd-tabs" role="tablist" id="evd-tabs"></div>
+    <div class="evd-body" id="evd-body"></div>
+  </div>
+</dialog>
+
+<dialog class="pf-lb" id="pf-lb" aria-label="Imagem ampliada">
+  <figure><img id="pf-lb-img" src="" alt=""><figcaption id="pf-lb-cap"></figcaption></figure>
+  <button class="lb-btn lb-prev" type="button" aria-label="Anterior">‹</button>
+  <button class="lb-btn lb-next" type="button" aria-label="Próxima">›</button>
+  <button class="lb-btn lb-close" type="button" aria-label="Fechar">×</button>
+  <span class="lb-count" id="pf-lb-count"></span>
+</dialog>
+
+<dialog class="pf-vid" id="pf-vid" aria-label="Vídeo">
+  <button class="lb-btn lb-close" type="button" aria-label="Fechar" style="position:absolute;top:14px;right:14px;width:44px;height:44px;font:400 30px/42px Arial,sans-serif">×</button>
+  <div class="frame"><iframe id="pf-vid-frame" src="" title="Vídeo do evento" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+</dialog>
+
+<script>window.__IMG__={"animese-2013-1.jpg": "portfolio-media/animese-2013-1.jpg", "animese-2013-2.jpg": "portfolio-media/animese-2013-2.jpg", "animese-2013-3.jpg": "portfolio-media/animese-2013-3.jpg", "animese-2013-4.jpg": "portfolio-media/animese-2013-4.jpg", "animese-2014-1.jpg": "portfolio-media/animese-2014-1.jpg", "animese-2014-2.jpg": "portfolio-media/animese-2014-2.jpg", "animese-2014-3.jpg": "portfolio-media/animese-2014-3.jpg", "animese-2014-4.jpg": "portfolio-media/animese-2014-4.jpg", "arte-marco-7a.jpg": "portfolio-media/arte-marco-7a.jpg", "banner-6a.jpg": "portfolio-media/banner-6a.jpg", "banner-7a.jpg": "portfolio-media/banner-7a.jpg", "cartaz-1a.jpg": "portfolio-media/cartaz-1a.jpg", "cartaz-2a.jpg": "portfolio-media/cartaz-2a.jpg", "cartaz-3a.jpg": "portfolio-media/cartaz-3a.jpg", "cartaz-4a.jpg": "portfolio-media/cartaz-4a.jpg", "cartaz-5a.jpg": "portfolio-media/cartaz-5a.jpg", "cartaz-6a.jpg": "portfolio-media/cartaz-6a.jpg", "cartaz-animese-2013.jpg": "portfolio-media/cartaz-animese-2013.jpg", "circo-homologacao.jpg": "portfolio-media/circo-homologacao.jpg", "decl-gigante.jpg": "portfolio-media/decl-gigante.jpg", "decl-jk.jpg": "portfolio-media/decl-jk.jpg", "decl-nsc.jpg": "portfolio-media/decl-nsc.jpg", "ficha-carlos-seidl.jpg": "portfolio-media/ficha-carlos-seidl.jpg", "ficha-francisco-bretas.jpg": "portfolio-media/ficha-francisco-bretas.jpg", "ficha-irmaos-piologo.jpg": "portfolio-media/ficha-irmaos-piologo.jpg", "ficha-leonardo-camilo.jpg": "portfolio-media/ficha-leonardo-camilo.jpg", "ficha-locus.jpg": "portfolio-media/ficha-locus.jpg", "ficha-marco-ribeiro.jpg": "portfolio-media/ficha-marco-ribeiro.jpg", "ficha-nelson-machado.jpg": "portfolio-media/ficha-nelson-machado.jpg", "ficha-projeto-kaplan.jpg": "portfolio-media/ficha-projeto-kaplan.jpg", "ficha-ulisses-bezerra.jpg": "portfolio-media/ficha-ulisses-bezerra.jpg", "ficha-wendel-bezerra.jpg": "portfolio-media/ficha-wendel-bezerra.jpg", "funarbe-convite.jpg": "portfolio-media/funarbe-convite.jpg", "jornal-2009-invasao.jpg": "portfolio-media/jornal-2009-invasao.jpg", "jornal-2009-recortes.jpg": "portfolio-media/jornal-2009-recortes.jpg", "jornal-2010-capa.jpg": "portfolio-media/jornal-2010-capa.jpg", "jornal-2010-materia.jpg": "portfolio-media/jornal-2010-materia.jpg", "jornal-2012-capa.jpg": "portfolio-media/jornal-2012-capa.jpg", "jornal-2012-materia.jpg": "portfolio-media/jornal-2012-materia.jpg", "missao-amor-45-cestas.jpg": "portfolio-media/missao-amor-45-cestas.jpg", "pod-vereadora.jpg": "portfolio-media/pod-vereadora.jpg", "pod-weslei.jpg": "portfolio-media/pod-weslei.jpg", "relatorio-contrapartidas.jpg": "portfolio-media/relatorio-contrapartidas.jpg", "termo-doacao-420kg.jpg": "portfolio-media/termo-doacao-420kg.jpg", "tfc-cartaz-1.jpg": "portfolio-media/tfc-cartaz-1.jpg", "tfc-cartaz-2.jpg": "portfolio-media/tfc-cartaz-2.jpg", "tfc-foto-1.jpg": "portfolio-media/tfc-foto-1.jpg", "tfc-foto-2.jpg": "portfolio-media/tfc-foto-2.jpg", "tfc-foto-3.jpg": "portfolio-media/tfc-foto-3.jpg", "tfc-foto-4.jpg": "portfolio-media/tfc-foto-4.jpg", "ficha-isaac-bardavid.jpg": "portfolio-media/ficha-isaac-bardavid.jpg", "ficha-leticia-quinto.jpg": "portfolio-media/ficha-leticia-quinto.jpg", "ficha-hermes-baroli.jpg": "portfolio-media/ficha-hermes-baroli.jpg", "ficha-gilberto-baroli.jpg": "portfolio-media/ficha-gilberto-baroli.jpg", "ficha-elcio-sodre.jpg": "portfolio-media/ficha-elcio-sodre.jpg", "ficha-waldyr-santanna.jpg": "portfolio-media/ficha-waldyr-santanna.jpg", "ficha-eddy-barrows.jpg": "portfolio-media/ficha-eddy-barrows.jpg", "ficha-paulo-siqueira.jpg": "portfolio-media/ficha-paulo-siqueira.jpg", "ficha-marcelo-del-debbio.jpg": "portfolio-media/ficha-marcelo-del-debbio.jpg", "cast-clube-chorinho.jpg": "portfolio-media/cast-clube-chorinho.jpg"};</script>
+<script src="site.js"></script>
+<script>
+(function () {
+  var IMG = window.__IMG__; function src(n){ return IMG[n.replace(/^th-/,'')] || ''; }
+  function el(t, a, h) { var e = document.createElement(t); if (a) for (var k in a) { if (k === 'class') e.className = a[k]; else e.setAttribute(k, a[k]); } if (h != null) e.innerHTML = h; return e; }
+
+  /* ---------- Artistas ---------- */
+  var A = {
+    gilberto:  { n: 'Gilberto Baroli', d: 'Dublador e diretor da dublagem de Os Cavaleiros do Zodíaco; voz de Saga de Gêmeos.', e: '1ª (2009) e 2ª (2010)', f: 'ficha-gilberto-baroli.jpg' },
+    elcio:     { n: 'Élcio Sodré', d: 'Shiryu de Dragão – Os Cavaleiros do Zodíaco.', e: '1ª (2009) e 2ª (2010)', f: 'ficha-elcio-sodre.jpg' },
+    hermes:    { n: 'Hermes Baroli', d: 'Seiya de Pégaso – Os Cavaleiros do Zodíaco.', e: '2ª (2010)', f: 'ficha-hermes-baroli.jpg' },
+    leonardo:  { n: 'Leonardo Camilo', d: 'Ikki de Fênix – Os Cavaleiros do Zodíaco; Piccolo (Dragon Ball Z).', e: '2ª (2010)', f: 'ficha-leonardo-camilo.jpg' },
+    bretas:    { n: 'Francisco Brêtas', d: 'Hyoga de Cisne – Os Cavaleiros do Zodíaco; Kaioshin (Dragon Ball Z).', e: '2ª (2010)', f: 'ficha-francisco-bretas.jpg' },
+    ulisses:   { n: 'Ulisses Bezerra', d: 'Shun de Andrômeda – Os Cavaleiros do Zodíaco.', e: '2ª (2010)', f: 'ficha-ulisses-bezerra.jpg' },
+    leticia:   { n: 'Letícia Quinto', d: 'Saori Kido / Athena – Os Cavaleiros do Zodíaco.', e: '2ª (2010)', f: 'ficha-leticia-quinto.jpg' },
+    kaplan:    { n: 'Projeto Kaplan', d: 'Quadrinhos digitais (MG) – palestra.', e: '2ª (2010)', f: 'ficha-projeto-kaplan.jpg' },
+    locus:     { n: 'Locus Terapias Naturais', d: 'Palestra sobre Reiki e acupuntura.', e: '1ª (2009) e 2ª (2010)', f: 'ficha-locus.jpg' },
+    wendel:    { n: 'Wendel Bezerra', d: 'Goku (Dragon Ball), Bob Esponja.', e: '3ª (2011)', f: 'ficha-wendel-bezerra.jpg' },
+    piologo:   { n: 'Irmãos Piologo', d: 'Criadores do Mundo Canibal – palestra sobre criação de sites em Flash.', e: '3ª (2011) e Anime-se (2013)', f: 'ficha-irmaos-piologo.jpg' },
+    nelson:    { n: 'Nelson Machado', d: 'Quico (Chaves); voz de Robin Williams e Jerry Lewis.', e: '4ª (2012)', f: 'ficha-nelson-machado.jpg' },
+    barrows:   { n: 'Eddy Barrows', d: 'Desenhista oficial da DC Comics (Superman, Batman).', e: '4ª (2012)', f: 'ficha-eddy-barrows.jpg' },
+    siqueira:  { n: 'Paulo Siqueira', d: 'Desenhista oficial da Marvel (Homem-Aranha).', e: '4ª (2012)', f: 'ficha-paulo-siqueira.jpg' },
+    debbio:    { n: 'Marcelo Del Debbio', d: 'Escritor, roteirista e autor do RPG Daemon – workshop.', e: '4ª (2012)', f: 'ficha-marcelo-del-debbio.jpg' },
+    seidl:     { n: 'Carlos Seidl', d: 'Seu Madruga (Chaves); Krusty (Os Simpsons).', e: '5ª (2012)', f: 'ficha-carlos-seidl.jpg' },
+    bardavid:  { n: 'Isaac Bardavid', d: 'Wolverine (X-Men); Esqueleto (He-Man); Tigrão.', e: '6ª (2013)', f: 'ficha-isaac-bardavid.jpg' },
+    marco:     { n: 'Marco Ribeiro', d: 'Voz brasileira de Robert Downey Jr.: Tony Stark / Homem de Ferro e Doutor Destino (Vingadores: Doutor Destino, 2026); Jim Carrey; Yusuke Urameshi; Woody.', e: '7ª (2014)', f: 'ficha-marco-ribeiro.jpg' },
+    chorinho:  { n: 'Clube do Chorinho', d: 'Fátima Campos, Marinho 7 Cordas, Bigode do Cavaco e Odenil Fernandes – samba de roda e choro.', e: 'Tô Fora da Casinha (2023)', f: 'cast-clube-chorinho.jpg' },
+    waldyr:    { n: 'Waldyr Sant’Anna', d: 'Homer Simpson (primeira voz); Eddie Murphy.', e: 'Anime-se (2013)', f: 'ficha-waldyr-santanna.jpg' }
+  };
+
+  /* ---------- Festivais ---------- */
+  var F = [
+    { id: 'ab1', tag: '1ª edição', t: 'Anime Betim', date: '15 de novembro de 2009', place: 'E.M. Antônio D’Assis Martins ("Gigante"), Centro, Betim/MG', poster: 'cartaz-1a.jpg',
+      about: 'Primeira edição do festival, aprovada no Edital 2009 da Lei Municipal de Fomento à Cultura de Betim (FUNARBE). A imprensa registrou 1.500 fãs no evento, com entrevista do organizador Weslei Abreu.',
+      high: ['1.500 fãs (imprensa)', 'Aprovado na Lei de Fomento à Cultura de Betim', '420 kg de alimentos doados à Assistência Social', '320 ingressos de contrapartida para jovens e alunos da rede pública'],
+      prog: [['Dubladores', 'Gilberto Baroli; Élcio Sodré'], ['Bandas', 'Banda Yume; Wasteland (Betim)'], ['Apresentações', 'Grupo de performance e apresentação teatral Excalibur'], ['Palestras', 'Locus Terapias – Reiki e Acupuntura'], ['Animix', 'Gincanas diversas; karaokê; concurso cosplay'], ['Entretenimento livre', 'Fliperama; campeonato de card games (Magic: The Gathering); sala de animes; estúdio cosplay; sala Tokusatsu; sala War Hammer; Grupo Valhalla; Kanagawa Ryu Ninpou Dojo; Revel – teatro e Arena Excalibur; oficina de desenho e ilustrações; campeonato de games']],
+      cast: ['gilberto', 'elcio', 'locus'],
+      reg: [['cartaz-1a.jpg', 'Cartaz do 1º Festival Anime Betim'], ['jornal-2009-invasao.jpg', 'Matéria "Invasão japonesa" – anúncio do 1º Festival'], ['jornal-2009-recortes.jpg', 'Recortes: "Cidade sedia 1º festival" e "Festival de anime reúne 1.500 fãs"'], ['relatorio-contrapartidas.jpg', 'Relatório de contrapartidas sociais (13/11/2009)'], ['termo-doacao-420kg.jpg', 'Termo de doação de 420 kg de alimentos à Prefeitura de Betim (dados pessoais ocultados)'], ['funarbe-convite.jpg', 'FUNARBE – projeto aprovado na Lei de Fomento à Cultura de Betim'], ['decl-gigante.jpg', 'Declaração da E.M. Antônio D’Assis Martins']] },
+    { id: 'ab2', tag: '2ª edição', t: 'Anime Betim', date: '5 e 6 de junho de 2010', place: 'E.M. Antônio D’Assis Martins ("Gigante"), Centro, Betim/MG', poster: 'cartaz-2a.jpg',
+      about: 'A edição reuniu mais de 6 mil pessoas, segundo o jornal Aqui Betim, e trouxe o elenco principal de dublagem de Os Cavaleiros do Zodíaco. Os alimentos arrecadados viraram 45 cestas básicas na Missão Amor.',
+      high: ['Mais de 6 mil pessoas (Aqui Betim)', 'Elenco de Os Cavaleiros do Zodíaco', '45 cestas básicas doadas à Missão Amor', 'Concurso cosplay com R$ 1.000'],
+      prog: [['Dubladores', 'Gilberto Baroli; Élcio Sodré; Leonardo Camilo; Letícia Quinto; Hermes Baroli; Francisco Brêtas; Ulisses Bezerra'], ['Bandas', 'Kaze no Uta; J-Kay; Escaravelho; Madara Bankai; Youkiko; I Há Durka; Wasteland'], ['Apresentações', 'Kanagawa Ryu Ninpou Dojo – ninjutsu'], ['Palestras', 'Projeto Kaplan – Quadrinhos Digitais; Locus Terapias – Reiki e Acupuntura'], ['Rádio Animix', 'Gincana One Piece; karaokê; concurso cosplay'], ['Entretenimento livre', 'Fliperama; card games (Magic: The Gathering); sala de animes; estúdio cosplay; sala Tokusatsu; paintball temático Resident Evil; sala War Hammer; Grupo Valhalla; arena de arco e flecha; oficina de desenho; campeonato de games']],
+      cast: ['gilberto', 'elcio', 'hermes', 'leonardo', 'bretas', 'ulisses', 'leticia', 'kaplan', 'locus'],
+      reg: [['cartaz-2a.jpg', 'Cartaz da 2ª edição'], ['jornal-2010-capa.jpg', 'Jornal Aqui Betim, 7/06/2010 – mais de 6 mil pessoas na 2ª edição'], ['jornal-2010-materia.jpg', 'Jornal Aqui Betim – matéria sobre a 2ª edição'], ['missao-amor-45-cestas.jpg', 'Carta da Missão Amor – 45 cestas básicas']],
+      vids: [['A0CF37l6ixs', 'Demonstração de espadas', '2ª edição – 2010'], ['8vv-kd8CMpg', 'Apresentação de cosplay (Usopp, One Piece)', '2ª edição – 2010']] },
+    { id: 'ab3', tag: '3ª edição', t: 'Anime Betim', date: '17 e 18 de dezembro de 2011', place: 'E.E. Juscelino Kubitschek de Oliveira, Betim/MG', poster: 'cartaz-3a.jpg',
+      about: 'Edição com o dublador Wendel Bezerra, voz do Goku, e palestra dos Irmãos Piologo, criadores do Mundo Canibal. A cobertura do site Seu Noob passou de 100 mil visualizações.',
+      high: ['Wendel Bezerra (Goku)', 'Irmãos Piologo – Mundo Canibal', 'Entrevista com mais de 100 mil visualizações'],
+      prog: [['Dubladores', 'Wendel Bezerra; Ricardo e Rodrigo Piologo (Mundo Canibal)'], ['Bandas', 'Kaze no Uta; Surge; Wasteland (Betim)'], ['Apresentações', 'Grupo Valhalla – desempenho e apresentação teatral'], ['Palestras', 'Irmãos Piologo – criação e manutenção de sites em Flash'], ['Rádio Animix', 'Gincanas diversas; karaokê; concurso cosplay'], ['Entretenimento livre', 'Fliperama; card games (Magic: The Gathering); sala de animes; estúdio cosplay; sala Tokusatsu; sala War Hammer; Grupo Valhalla; oficina de desenho; campeonato de games']],
+      cast: ['wendel', 'piologo'],
+      reg: [['cartaz-3a.jpg', 'Cartaz da 3ª edição'], ['decl-jk.jpg', 'Declaração da E.E. Juscelino Kubitschek de Oliveira']],
+      vids: [['ZGk6RrsRrEo', 'Teaser da cobertura do Seu Noob', '3ª edição – 2011'], ['Y8ZLhj2dajs', 'Seu Noob entrevista os Irmãos Piologo', '3ª edição – 2011']] },
+    { id: 'ab4', tag: '4ª edição', t: 'Anime Betim', date: '1 e 2 de setembro de 2012', place: 'E.E. Nossa Senhora do Carmo, Angola, Betim/MG', poster: 'cartaz-4a.jpg',
+      about: 'Edição com o dublador Nelson Machado, voz do Quico, e os desenhistas Eddy Barrows (DC Comics) e Paulo Siqueira (Marvel). Capa do jornal Aqui Betim: "Animação e solidariedade".',
+      high: ['Nelson Machado (Quico)', 'Desenhistas da DC Comics e da Marvel', 'Workshop de Marcelo Del Debbio', 'Capa do jornal Aqui Betim'],
+      prog: [['Dubladores', 'Nelson Machado'], ['Bandas', 'Kaze no Uta; Didáticos; Madara Bankai; Wasteland (Betim)'], ['Apresentações', 'Marcelo Del Debbio – escritor, roteirista, desenhista e produtor'], ['Palestras', 'Workshop de Marcelo Del Debbio; Paulo Siqueira – Marvel; Eddy Barrows – DC Comics'], ['Animix', 'Gincanas diversas; karaokê; concurso cosplay'], ['Entretenimento livre', 'Máquina de dança (Pump); fliperama; card games (Magic: The Gathering); sala de animes; estúdio cosplay; sala Tokusatsu; sala War Hammer; Grupo Valhalla; oficina de desenho; gincana torta na cara; campeonato de games']],
+      cast: ['nelson', 'barrows', 'siqueira', 'debbio'],
+      reg: [['cartaz-4a.jpg', 'Panfleto da 4ª edição'], ['jornal-2012-capa.jpg', 'Jornal Aqui Betim, 31/08/2012 – "Animação e solidariedade"'], ['jornal-2012-materia.jpg', 'Matéria "No ritmo dos quadrinhos" – 4ª edição'], ['decl-nsc.jpg', 'Declaração da E.E. Nossa Senhora do Carmo']] },
+    { id: 'ab5', tag: '5ª edição', t: 'Anime Betim', date: '9 de dezembro de 2012', place: 'E.E. Nossa Senhora do Carmo, Angola, Betim/MG', poster: 'cartaz-5a.jpg',
+      about: 'Edição com o dublador Carlos Seidl, voz do Seu Madruga, campeonato de Magic: The Gathering e sala de jogos com telão.',
+      high: ['Carlos Seidl (Seu Madruga)', 'Campeonato de Magic', 'Sala de jogos com telão'],
+      prog: [['Dubladores', 'Carlos Seidl'], ['Apresentações', 'Grupo Valhalla – desempenho e apresentação teatral'], ['Entretenimento livre', 'Estúdio cosplay; máquina de dança (Pump); fliperama; card games (Magic: The Gathering); sala de animes; sala Tokusatsu; sala War Hammer; Grupo Valhalla; oficina de desenho; gincana torta na cara; campeonato de games']],
+      cast: ['seidl'], reg: [['cartaz-5a.jpg', 'Panfletos da 5ª edição – Carlos Seidl e campeonato de Magic'], ['decl-nsc.jpg', 'Declaração da E.E. Nossa Senhora do Carmo, que sediou a 4ª e a 5ª edição']] },
+    { id: 'ab6', tag: '6ª edição', t: 'Anime Betim', date: '3 e 4 de agosto de 2013', place: 'Ginásio Poliesportivo Divino Braga, Betim/MG', poster: 'cartaz-6a.jpg',
+      about: 'Edição no Ginásio Poliesportivo de Betim com o ator e dublador Isaac Bardavid, voz do Wolverine e do Esqueleto, como atração principal.',
+      high: ['Isaac Bardavid (Wolverine)', 'Concurso K-pop e desfile lolita', 'Reportagem na TV Betim'],
+      prog: [['Dublador', 'Isaac Bardavid – atração principal'], ['Concursos', 'Concurso cosplay (R$ 1.000); concurso K-pop; desfile lolita'], ['Campeonatos', 'Magic: The Gathering; Pump (performance)'], ['Espaços', 'Área de jogos com telão; salas de RPG de mesa; arena medieval; oficina de desenho; gincanas'], ['Bandas', 'Steel Scorpion; Surge; Let\u2019s Go Zombies e outras']],
+      cast: ['bardavid'], reg: [['cartaz-6a.jpg', 'Cartaz da 6ª edição – Isaac Bardavid'], ['banner-6a.jpg', 'Banner de divulgação no blog oficial']],
+      vids: [['tXJTme7uXsU', 'Anime Betim no programa Palco 2 Alternativo – TV Betim', 'Agosto de 2013']] },
+    { id: 'ab7', tag: '7ª edição', t: 'Anime Betim', date: '13 e 14 de dezembro de 2014', place: 'Centro Poliesportivo Divino Braga, Betim/MG', poster: 'banner-7a.jpg',
+      about: 'Edição com o dublador Marco Ribeiro como atração principal. O jornal O Tempo Betim citou cerca de mil pessoas por dia e quase 6 mil participantes nas edições anteriores.',
+      high: ['Marco Ribeiro – atração principal', 'Cerca de 1.000 pessoas por dia (O Tempo)', 'Concurso cosplay, oficinas de desenho e arena medieval'],
+      prog: [['Dublador', 'Marco Ribeiro'], ['Atividades', 'Concurso cosplay; gincanas e concursos; salas de jogos; exibição de animes; arena medieval; oficinas de desenho']],
+      cast: ['marco'], reg: [['banner-7a.jpg', 'Banner da 7ª edição – 13 e 14/12/2014'], ['arte-marco-7a.jpg', 'Arte de divulgação: Marco Ribeiro, atração principal']],
+      links: [['https://www.otempobetim.com.br/ultimas/anime-betim-acontece-neste-fim-de-semana-1.959864', 'O Tempo Betim – "Anime Betim acontece neste fim de semana"']] },
+    { id: 'as13', tag: 'Belo Horizonte', t: 'Anime-se', date: '7 e 8 de dezembro de 2013', place: 'Mercado das Borboletas, Belo Horizonte/MG', poster: 'cartaz-animese-2013.jpg',
+      about: 'Primeira edição do Anime-se, na capital mineira, com o dublador Waldyr Sant’Anna e os Irmãos Piologo.',
+      high: ['Waldyr Sant’Anna (Homer Simpson)', 'Concurso cosplay com R$ 1.000', 'Campeonatos de games com premiação'],
+      prog: [['Dublador', 'Waldyr Sant’Anna'], ['Convidados', 'Irmãos Piologo – criadores do Mundo Canibal'], ['Bandas', 'Sábado: Carne de Segunda e outras; domingo: Surge, Steel Scorpion e outras'], ['Concursos', 'Cosplay (R$ 1.000 no 1º lugar); K-pop; lolita'], ['Atividades', 'Campeonatos de games (KOF XIII, SSF4AE, MK, SF3, Magic); área free player com fliperama; sala de RPG; gincanas; arena medieval; paintball; aerografia; estandes']],
+      cast: ['waldyr', 'piologo'],
+      reg: [['cartaz-animese-2013.jpg', 'Cartaz do Anime-se 2013'], ['animese-2013-1.jpg', 'Público no Anime-se 2013'], ['animese-2013-2.jpg', 'Show de banda'], ['animese-2013-3.jpg', 'Cosplayers'], ['animese-2013-4.jpg', 'Público e cosplay']],
+      vids: [['MCNLzPbHbY8', 'Cobertura do concurso de cosplay – Passatempo Otaku', 'Anime-se 2013']] },
+    { id: 'as14', tag: 'Belo Horizonte', t: 'Anime Se BH', date: '2014', place: 'Belo Horizonte/MG', poster: 'animese-2014-1.jpg',
+      about: 'Segunda edição do Anime-se, com shows e concursos no palco. O portfólio do site reúne 156 fotos do palco, de Marcella Santos / Cos+Up.',
+      high: ['Shows e concursos no palco', '156 fotos de Marcella Santos / Cos+Up'],
+      prog: [['Palco', 'Shows e apresentações'], ['Concursos', 'Concurso cosplay no palco'], ['Cobertura', 'Fotografia oficial: Marcella Santos / Cos+Up']], progTitle: 'Programação (registrada nas fotos)',
+      cast: [],
+      reg: [['animese-2014-1.jpg', 'Palco do Anime Se BH 2014 – foto de Marcella Santos / Cos+Up'], ['animese-2014-2.jpg', 'Concurso cosplay – foto de Marcella Santos / Cos+Up'], ['animese-2014-3.jpg', 'Apresentação no palco – foto de Marcella Santos / Cos+Up'], ['animese-2014-4.jpg', 'Apresentação no palco – foto de Marcella Santos / Cos+Up']],
+      links: [['/anime-se', 'Galeria completa com 252 fotos do Anime-se']] }
+  ];
+
+  /* ---------- Projetos em Chapada ---------- */
+  var C = [
+    { id: 'tfc', tag: '2023', t: 'Tô Fora da Casinha', date: '9/07/2023 e 2/12/2023', place: 'Chapada dos Guimarães/MT', poster: 'tfc-cartaz-1.jpg',
+      about: 'Samba de roda beneficente em prol da castração de animais de rua, idealizado e produzido por Weslei Abreu (Weslei Eventos), com o Clube do Chorinho (Fátima Campos, Marinho 7 Cordas, Bigode do Cavaco e Odenil Fernandes) e parceria com protetoras locais (Santa Patas e Eco Vidas). Apoio da Prefeitura de Chapada dos Guimarães e de mais de 15 comércios locais.',
+      prog: [['1ª edição – 9/07/2023, 12h às 18h', 'Samba de roda com o Clube do Chorinho; feijoada beneficente tradicional e vegana (R$ 60); rifas com prêmios doados pelo comércio local; Mangueiras Café Bar, Rua Quincas Caldas, 44, Centro'], ['2ª edição – 2/12/2023, sábado, 20h às 0h30', 'Samba de roda com o Clube do Chorinho; buffet de massas (R$ 60); rifas com prêmios doados pelo comércio local; Salão da Paróquia do Santuário de Sant\u2019Anna, Rua Cipriano Curvo, Centro'], ['Destino da renda', 'Castração de animais de rua, com as protetoras Santa Patas e Eco Vidas']],
+      cast: ['chorinho'],
+      high: ['1ª edição: feijoada beneficente no Mangueiras Café Bar (9/07/2023)', '2ª edição: buffet de massas no Salão da Paróquia do Santuário de Sant’Anna (2/12/2023)', '3ª edição em preparação'],
+      reg: [['tfc-cartaz-1.jpg', '1ª edição – 9/07/2023, Mangueiras Café Bar'], ['tfc-cartaz-2.jpg', '2ª edição – 2/12/2023, Salão da Paróquia do Santuário de Sant’Anna'], ['tfc-foto-1.jpg', 'Público no Tô Fora da Casinha'], ['tfc-foto-2.jpg', 'Weslei Abreu na condução do evento'], ['tfc-foto-3.jpg', 'Tô Fora da Casinha'], ['tfc-foto-4.jpg', 'Tô Fora da Casinha']],
+      links: [['/to-fora-da-casinha', 'Mais fotos e vídeos do Tô Fora da Casinha']] },
+    { id: 'circo', tag: 'Homologado', t: 'Circo na Escola', date: 'Homologado em 12/05/2023', place: 'Comarca de Chapada dos Guimarães/MT', poster: 'circo-homologacao.jpg',
+      about: 'Projeto cultural proposto por Weslei Abreu e homologado no Banco de Projetos e Entidades do Ministério Público de Mato Grosso, comarca de Chapada dos Guimarães.',
+      high: ['Status: HOMOLOGADO', 'Banco de Projetos e Entidades – MPMT'],
+      reg: [['circo-homologacao.jpg', 'Aviso de homologação do Banco de Projetos e Entidades do MPMT (12/05/2023)']] },
+    { id: 'pod', tag: 'Audiovisual', t: 'PodCast com Candidata', date: 'Produção audiovisual', place: 'Chapada dos Guimarães/MT', poster: 'pod-weslei.jpg',
+      about: 'Videocast gravado em estúdio, com Weslei Abreu como entrevistador, em que uma vereadora de Chapada dos Guimarães apresenta seus projetos para a comunidade. A partir da gravação foram produzidos cortes verticais legendados para as redes sociais: o mesmo formato que o projeto de formação propõe ensinar aos alunos.',
+      high: ['Entrevista, roteiro e gravação', 'Cortes verticais legendados (9:16)', 'Publicação nas redes sociais'],
+      prog: [['Corte 1', '"Crianças comendo pipoca no café da manhã" – a padaria comunitária com parcerias de empresas privadas e orientação do Sebrae (36 s)'], ['Corte 6', '"O que fazer quando a criança passa fome" – padaria comunitária, esporte para tirar crianças da rua e ônibus para as famílias (36 s)']],
+      progTitle: 'Cortes produzidos',
+      reg: [['pod-vereadora.jpg', '"Eu quero levar esse projeto para os bairros menos favorecidos de Chapada."'], ['pod-weslei.jpg', 'Weslei Abreu na condução da entrevista']] }
+  ];
+
+  /* ---------- Lightbox ---------- */
+  var lb = document.getElementById('pf-lb'), lbImg = document.getElementById('pf-lb-img'), lbCap = document.getElementById('pf-lb-cap'), lbCount = document.getElementById('pf-lb-count');
+  var set = [], cur = 0;
+  function show(i) { cur = (i + set.length) % set.length; lbImg.src = src(set[cur][0]); lbImg.alt = set[cur][1]; lbCap.textContent = set[cur][1]; lbCount.textContent = (cur + 1) + ' / ' + set.length; lb.classList.toggle('single', set.length < 2); }
+  function openLb(list, i) { set = list; show(i); if (!lb.open) lb.showModal(); }
+  function closeLb() { if (lb.open) lb.close(); }
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.tagName === 'FIGURE') closeLb(); });
+  lb.querySelector('.lb-close').addEventListener('click', closeLb);
+  lb.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(cur - 1); });
+  lb.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(cur + 1); });
+  var sx = 0;
+  lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) { var dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); });
+
+  var vb = document.getElementById('pf-vid'), vf = document.getElementById('pf-vid-frame');
+  function openVid(id) { vf.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0'; if (!vb.open) vb.showModal(); }
+  function closeVid() { if (vb.open) vb.close(); vf.src = ''; }
+  vb.addEventListener('close', function () { vf.src = ''; });
+  vb.addEventListener('click', function (e) { if (e.target === vb) closeVid(); });
+  vb.querySelector('.lb-close').addEventListener('click', closeVid);
+
+  lb.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+
+  /* ---------- Construtores ---------- */
+  function gallery(list, cls) {
+    var g = el('div', { class: 'gal' + (cls ? ' ' + cls : '') });
+    list.forEach(function (it, i) {
+      var f = el('figure'), b = el('button', { class: 'zim', type: 'button', 'aria-label': 'Ampliar: ' + it[1] });
+      b.appendChild(el('img', { src: src(it[0]), alt: it[1], loading: 'lazy' }));
+      b.addEventListener('click', function () { openLb(list, i); });
+      f.appendChild(b); f.appendChild(el('figcaption', null, it[1])); g.appendChild(f);
+    });
+    return g;
+  }
+  function artistCard(key, list, idx) {
+    var a = A[key], c = el('div', { class: 'artist' });
+    if (a.f) {
+      var b = el('button', { class: 'zim', type: 'button', 'aria-label': 'Ampliar ficha de ' + a.n });
+      b.appendChild(el('img', { src: src(a.f), alt: 'Ficha de ' + a.n, loading: 'lazy' }));
+      b.addEventListener('click', function () { openLb(list, idx); });
+      c.appendChild(b);
+    }
+    c.appendChild(el('div', { class: 'info' }, '<h4>' + a.n + '</h4><p>' + a.d + '</p><span class="badge">' + a.e + '</span>'));
+    return c;
+  }
+  function castBlock(keys) {
+    var withF = keys.filter(function (k) { return A[k].f; }).map(function (k) { return [A[k].f, 'Ficha de ' + A[k].n]; });
+    var wrap = el('div', { class: 'cast' }), n = 0;
+    keys.forEach(function (k) { wrap.appendChild(artistCard(k, withF, A[k].f ? n++ : 0)); });
+    return wrap;
+  }
+  function vidBlock(vids) {
+    var w = el('div', { class: 'vids' });
+    vids.forEach(function (v) {
+      var b = el('button', { class: 'vid', type: 'button', 'aria-label': 'Assistir: ' + v[1] });
+      b.appendChild(el('div', { class: 'vthumb', style: 'background-image:url(https://i.ytimg.com/vi/' + v[0] + '/hqdefault.jpg)' }));
+      b.appendChild(el('p', null, v[1] + '<small>' + v[2] + '</small>'));
+      b.addEventListener('click', function () { openVid(v[0]); });
+      w.appendChild(b);
+    });
+    return w;
+  }
+  function card(ev, onOpen) {
+    var b = el('button', { class: 'ev-card', type: 'button', 'aria-haspopup': 'dialog' });
+    b.innerHTML = '<div class="thumb" style="background-image:url(\'' + src(ev.poster) + '\')"></div><span class="open">Abrir</span>' +
+      '<div class="meta"><span class="tag">' + ev.tag + '</span><h3>' + ev.t + '</h3><p>' + ev.date + '<br>' + ev.place + '</p></div>';
+    b.addEventListener('click', function () { onOpen(ev); });
+    return b;
+  }
+
+  /* ---------- Caixa de diálogo ---------- */
+  var dlg = document.getElementById('evd'), tabs = document.getElementById('evd-tabs'), body = document.getElementById('evd-body');
+  dlg.querySelector('.evd-x').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+
+  function openEvent(ev) {
+    document.getElementById('evd-img').src = src(ev.poster);
+    document.getElementById('evd-title').textContent = ev.t + (ev.tag && ev.tag.indexOf('edição') > -1 ? ' – ' + ev.tag : '');
+    document.getElementById('evd-sub').textContent = ev.date + ' · ' + ev.place;
+    tabs.innerHTML = ''; body.innerHTML = '';
+    var panels = [];
+
+    var p1 = el('div', { class: 'evd-panel' });
+    var ab = el('div', { class: 'about' });
+    var pb = el('button', { class: 'poster', type: 'button', 'aria-label': 'Ampliar cartaz' });
+    pb.appendChild(el('img', { src: src(ev.poster), alt: 'Cartaz – ' + ev.t + ' ' + (ev.tag || '') }));
+    pb.addEventListener('click', function () { openLb([[ev.poster, ev.t + ' – ' + ev.date]], 0); });
+    ab.appendChild(pb);
+    var txt = el('div');
+    txt.innerHTML = '<dl class="kv"><dt>Data</dt><dd>' + ev.date + '</dd><dt>Local</dt><dd>' + ev.place + '</dd><dt>Realização</dt><dd>' +
+      (ev.id === 'tfc' ? 'Weslei Eventos' : ev.id === 'circo' || ev.id === 'pod' ? 'Weslei Abreu' : 'White Wolf Eventos – Weslei Abreu') + '</dd></dl><p>' + ev.about + '</p>';
+    if (ev.high && ev.high.length) { var c = el('div', { class: 'card' }, '<h3>Destaques</h3><ul>' + ev.high.map(function (h) { return '<li>' + h + '</li>'; }).join('') + '</ul>'); txt.appendChild(c); }
+    if (ev.links) { var ul = el('ul', { class: 'link-list', style: 'margin-top:14px' }); ev.links.forEach(function (l) { ul.appendChild(el('li', null, '<a href="' + l[0] + '" target="' + (l[0][0] === '/' ? '_self' : '_blank') + '" rel="noopener">' + l[1] + '</a>')); }); txt.appendChild(ul); }
+    ab.appendChild(txt); p1.appendChild(ab);
+    panels.push(['Sobre', p1]);
+
+    if (ev.id === 'pod' && ev.prog && ev.prog.length) {
+      var p2 = el('div', { class: 'evd-panel' });
+      if (ev.progTitle) p2.appendChild(el('h3', null, ev.progTitle));
+      var pg = el('div', { class: 'prog' });
+      ev.prog.forEach(function (s) { pg.appendChild(el('div', { class: 'card' }, '<h3>' + s[0] + '</h3><ul>' + s[1].split('; ').map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>')); });
+      p2.appendChild(pg);
+      if (/^ab[1-5]$/.test(ev.id)) p2.appendChild(el('p', { class: 'note' }, 'Transcrição da programação impressa da edição.'));
+      panels.push([ev.progTitle || 'Programação', p2]);
+    }
+    if (ev.cast && ev.cast.length) {
+      var p3 = el('div', { class: 'evd-panel' });
+      p3.appendChild(castBlock(ev.cast));
+      panels.push(['Casting', p3]);
+    } else if (ev.id === 'as14') {
+      var p3b = el('div', { class: 'evd-panel' });
+      p3b.appendChild(el('div', { class: 'card' }, '<h3>Parceiros da edição</h3><ul><li>Cos+Up – cobertura fotográfica oficial (Marcella Santos)</li><li>Produção: Weslei Abreu</li></ul>'));
+      panels.push(['Casting', p3b]);
+    }
+    if (ev.reg && ev.reg.length) {
+      var p4 = el('div', { class: 'evd-panel' });
+      p4.appendChild(gallery(ev.reg));
+      panels.push(['Registros', p4]);
+    }
+    if (ev.vids && ev.vids.length) {
+      var p5 = el('div', { class: 'evd-panel' });
+      p5.appendChild(vidBlock(ev.vids));
+      panels.push(['Vídeos', p5]);
+    }
+
+    panels.forEach(function (p, i) {
+      var t = el('button', { class: 'btn btn-tech', type: 'button', role: 'tab', 'aria-selected': i === 0 ? 'true' : 'false' }, p[0]);
+      p[1].hidden = i !== 0; p[1].setAttribute('role', 'tabpanel');
+      t.addEventListener('click', function () {
+        panels.forEach(function (q, j) { q[1].hidden = j !== i; tabs.children[j].setAttribute('aria-selected', j === i ? 'true' : 'false'); });
+        body.scrollTop = 0;
+      });
+      tabs.appendChild(t); body.appendChild(p[1]);
+    });
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+    body.scrollTop = 0;
+  }
+
+  /* ---------- Montagem da página ---------- */
+  var gc = document.getElementById('grid-chapada'); C.forEach(function (ev) { gc.appendChild(card(ev, openEvent)); });
+  var gf = document.getElementById('grid-festivais'); F.forEach(function (ev) { gf.appendChild(card(ev, openEvent)); });
+  document.getElementById('cast-all').replaceWith((function () { var b = castBlock(Object.keys(A)); b.id = 'cast-all'; return b; })());
+  document.getElementById('gal-social').replaceWith(gallery([
+    ['relatorio-contrapartidas.jpg', 'Relatório de contrapartidas sociais do 1º Festival (13/11/2009): 150 ingressos para o Pró-Jovem Urbano, 120 para alunos da rede pública e 50 para a Assistência Social'],
+    ['termo-doacao-420kg.jpg', 'Termo de doação de 420 kg de alimentos à Prefeitura de Betim – Assistência Social (dados pessoais ocultados)'],
+    ['missao-amor-45-cestas.jpg', 'Carta da Missão Amor (7/06/2010): 45 cestas básicas com cerca de 10 kg cada, da 2ª edição']]));
+  document.getElementById('gal-imprensa').replaceWith(gallery([
+    ['jornal-2009-invasao.jpg', '"Invasão japonesa" – anúncio do 1º Festival Anime Betim (2009)'],
+    ['jornal-2009-recortes.jpg', 'Recortes de 2009: "Festival de anime reúne 1.500 fãs" e entrevista com o organizador'],
+    ['jornal-2010-capa.jpg', 'Jornal Aqui Betim, 7/06/2010 – mais de 6 mil pessoas na 2ª edição'],
+    ['jornal-2010-materia.jpg', 'Jornal Aqui Betim – "De monstros a heróis", 2ª edição'],
+    ['jornal-2012-capa.jpg', 'Jornal Aqui Betim, 31/08/2012 – "Animação e solidariedade"'],
+    ['jornal-2012-materia.jpg', '"No ritmo dos quadrinhos" – 4ª edição']], 'land contain'));
+  document.getElementById('vids-all').replaceWith((function () { var v = vidBlock([
+    ['A0CF37l6ixs', 'Demonstração de espadas', 'Anime Betim – 2010'], ['8vv-kd8CMpg', 'Apresentação de cosplay (Usopp, One Piece)', 'Anime Betim – 2010'],
+    ['ZGk6RrsRrEo', 'Teaser da cobertura do Seu Noob', '3º Anime Betim – 2011'], ['Y8ZLhj2dajs', 'Seu Noob entrevista os Irmãos Piologo', '3º Anime Betim – 2011'],
+    ['tXJTme7uXsU', 'Anime Betim no Palco 2 Alternativo – TV Betim', 'Agosto de 2013'], ['MCNLzPbHbY8', 'Cobertura do concurso de cosplay', 'Anime-se – 2013']]); v.id = 'vids-all'; return v; })());
+  document.getElementById('gal-docs').replaceWith(gallery([
+    ['decl-gigante.jpg', 'Declaração – E.M. Antônio D’Assis Martins (Gigante)'], ['decl-jk.jpg', 'Declaração – E.E. Juscelino Kubitschek de Oliveira'],
+    ['decl-nsc.jpg', 'Declaração – E.E. Nossa Senhora do Carmo'], ['funarbe-convite.jpg', 'FUNARBE/Prefeitura de Betim – projeto aprovado no Edital 2009 da Lei Municipal de Fomento à Cultura'],
+    ['circo-homologacao.jpg', 'Circo na Escola – homologado no Banco de Projetos e Entidades do MPMT (12/05/2023)']]));
+})();
+</script>
+</body>
+</html>

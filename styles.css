@@ -1,0 +1,935 @@
+/* Fonte personalizada enviada ao Wix (usada no nome "WESLEI ABREU") */
+@font-face {
+  font-family: "Giants";
+  src: url("fonts/giants.woff2") format("woff2"),
+       url("fonts/giants.woff") format("woff");
+  font-display: swap;
+}
+
+:root {
+  --black: #080808;
+  --white: #ffffff;
+  --copper: #bf7951;
+  --button: #ae633f;
+  --green: #0c4426;
+  --stage-w: 980px;
+  --head-h: 277px;
+  --foot-h: 158px;
+  --scale: 1;
+  --sans: "Figtree", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+html, body { margin: 0; }
+
+/* Coluna da altura da tela: o rodapé fica sempre no fim */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.grow { flex: 1; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Fundo fixo: imagem de pintura sobre preto; a opacidade muda por página */
+.page-bg {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 120vh;
+  background: url("media/fundo-pintura.jpg") center / cover no-repeat;
+  opacity: var(--bg-opacity, 0.2);
+  z-index: -1;
+}
+
+/* ---------- Palcos de 980px, escalados em telas estreitas ---------- */
+.stage-wrap { position: relative; flex: none; }
+.head-wrap { height: calc(var(--head-h) * var(--scale)); }
+.content-wrap { height: calc(var(--content-h) * 1px * var(--scale)); overflow: hidden; }
+.foot-wrap {
+  height: calc(var(--foot-h) * var(--scale));
+  background: var(--black);
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+}
+
+.stage {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: var(--stage-w);
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
+}
+.head-wrap .stage { height: var(--head-h); }
+.content-wrap .stage { height: calc(var(--content-h) * 1px); }
+.foot-wrap .stage { height: var(--foot-h); }
+
+/* Faixa preta do cabeçalho, de ponta a ponta */
+.head-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--black);
+}
+
+/* Elementos posicionados com as medidas do Wix: --x, --y, --w, --h em px */
+.el {
+  position: absolute;
+  margin: 0;
+  left: calc(var(--x) * 1px);
+  top: calc(var(--y) * 1px);
+  width: calc(var(--w) * 1px);
+  height: calc(var(--h) * 1px);
+}
+.el > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+img.el { display: block; object-fit: cover; }
+.group { display: contents; }
+
+/* ---------- Cabeçalho ---------- */
+.logo { z-index: 2; }
+.logo img,
+.bulb-small img { object-fit: contain; }
+
+.name {
+  font: 400 100px/1.35 "Giants", "Cinzel", serif;
+  letter-spacing: 20px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.roles {
+  left: 0;
+  height: auto;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: baseline;
+  font: 700 25px/56px "Cinzel", serif;
+  white-space: pre;
+}
+.roles > * { display: inline-block; }
+.roles > .sep { padding: 0 38px; }
+
+/* ---------- Rodapé ---------- */
+.phone {
+  font: 600 27px/40px "Poppins", sans-serif;
+  letter-spacing: 0.27px;
+  white-space: nowrap;
+}
+
+/* ---------- Componentes ---------- */
+
+/* Pastas da Home */
+.folder { transition: transform .2s ease; container-type: inline-size; }
+.folder:hover { transform: translateY(-4px); }
+
+/* Nome escrito na frente da pasta, inclinado como a arte original */
+.folder-label {
+  position: absolute;
+  left: 0;
+  right: 4%;
+  top: 37%;
+  height: 34%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font: 900 calc(var(--fs, 12.5) * 1cqw)/1 "Playfair Display", serif;
+  color: #363434;
+  white-space: nowrap;
+  transform: rotate(8deg) scaleX(0.56);
+}
+
+/* Título com vídeo dentro das letras (efeito "texto com vídeo" do Wix) */
+.vtext { display: block; }
+.vtext svg { position: absolute; width: 0; height: 0; }
+.vtext .vt-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--copper);
+  overflow: hidden;
+}
+.vtext video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
+
+/* Placa de metal escovado com parafusos, atrás de um título com vídeo */
+.plate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #4e5359;
+  border-radius: 4px;
+  background:
+    radial-gradient(circle at 12px 12px, #3c4046 0 2px, #f4f6f8 2.6px, #8c9197 4.6px, #2f3338 5.4px, transparent 6px),
+    radial-gradient(circle at calc(100% - 12px) 12px, #3c4046 0 2px, #f4f6f8 2.6px, #8c9197 4.6px, #2f3338 5.4px, transparent 6px),
+    radial-gradient(circle at 12px calc(100% - 12px), #3c4046 0 2px, #f4f6f8 2.6px, #8c9197 4.6px, #2f3338 5.4px, transparent 6px),
+    radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), #3c4046 0 2px, #f4f6f8 2.6px, #8c9197 4.6px, #2f3338 5.4px, transparent 6px),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, .03) 0 1px, rgba(0, 0, 0, .015) 1px 2px, rgba(255, 255, 255, 0) 2px 4px),
+    linear-gradient(90deg, #7d838a 0%, #c3c8cd 18%, #e9ecef 38%, #fbfcfd 50%, #e3e6e9 62%, #bfc4c9 82%, #7d838a 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .85),
+    inset 0 -2px 3px rgba(0, 0, 0, .35),
+    inset 0 0 0 1px rgba(255, 255, 255, .25),
+    0 10px 24px rgba(0, 0, 0, .65);
+}
+.plate .vtext {
+  position: relative;
+  flex: none;
+  width: calc(var(--w) * 1px);
+  height: calc(var(--h) * 1px);
+  margin: 0;
+  /* contorno preto em volta das letras + leve relevo */
+  filter:
+    drop-shadow(1.5px 0 0 #000) drop-shadow(-1.5px 0 0 #000)
+    drop-shadow(0 1.5px 0 #000) drop-shadow(0 -1.5px 0 #000)
+    drop-shadow(0 2px 2px rgba(0, 0, 0, .45));
+}
+
+/* Endereço de site em destaque (Portfólio) */
+.urltext {
+  font: 400 calc(var(--fs) * 1px)/1.35 "Playfair Display", serif;
+  color: #8f8f8f;
+  white-space: nowrap;
+  transition: color .2s ease;
+}
+.urltext:hover { color: #c9c9c9; }
+
+/* Botão cobre arredondado */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--button);
+  border: 0;
+  border-radius: 10px;
+  color: var(--white);
+  font: 300 16px/1 var(--sans);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: filter .2s ease;
+}
+.btn:hover { filter: brightness(1.12); }
+.btn svg { width: 23px; height: 23px; fill: currentColor; flex: none; }
+
+/* Botão de painel tecnológico: vidro escuro, contorno âmbar e cantos chanfrados */
+.btn-tech {
+  --cut: 12px;
+  --amber: #ffb02e;
+  justify-content: center;
+  padding: 0 18px;
+  isolation: isolate;
+  background: linear-gradient(90deg, #ffc247, #ff8f1f);
+  border: 0;
+  border-radius: 0;
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+  color: #ffc04a;
+  font: 600 15px/1.15 "Rajdhani", "Figtree", sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: normal;
+  transition: color .2s ease, text-shadow .2s ease;
+}
+.btn-tech:not(.el) { position: relative; }
+/* miolo de vidro escuro, deixando 1,5px do contorno âmbar à mostra */
+.btn-tech::before {
+  content: "";
+  position: absolute;
+  inset: 1.5px;
+  z-index: -1;
+  clip-path: polygon(calc(var(--cut) - 1px) 0, 100% 0, 100% calc(100% - var(--cut) + 1px), calc(100% - var(--cut) + 1px) 100%, 0 100%, 0 calc(var(--cut) - 1px));
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, 0) 45%),
+    linear-gradient(180deg, rgba(16, 24, 36, .94), rgba(6, 10, 18, .94));
+  transition: background .2s ease;
+}
+/* marcador aceso no canto, como LED de equipamento */
+.btn-tech::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: 7px;
+  width: 16px;
+  height: 2px;
+  background: var(--amber);
+  box-shadow: 0 0 6px var(--amber);
+}
+.btn-tech:hover {
+  filter: none;
+  color: #fff4dc;
+  text-shadow: 0 0 10px rgba(255, 176, 46, .85);
+}
+.btn-tech:hover::before {
+  background:
+    linear-gradient(180deg, rgba(255, 190, 80, .22), rgba(255, 140, 30, .08)),
+    linear-gradient(180deg, rgba(16, 24, 36, .94), rgba(6, 10, 18, .94));
+}
+.btn-tech:active::before { background: rgba(255, 160, 40, .28); }
+.btn-tech:focus-visible { outline: 2px solid #fff4dc; outline-offset: 3px; }
+
+/* VOLTAR */
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--copper);
+  border-bottom: 2.7px solid var(--green);
+  color: var(--green);
+  font: 700 19px/1 "Oswald", sans-serif;
+  letter-spacing: 0.5px;
+}
+.back:hover { filter: brightness(1.1); }
+
+/* Texto corrido */
+.text {
+  font: 400 16px/28.8px var(--sans);
+  color: var(--white);
+}
+.text p { margin: 0 0 28.8px; }
+.text p:last-child { margin-bottom: 0; }
+.justify { text-align: justify; }
+
+.heading {
+  font: 400 40px/1.35 "Cinzel", serif;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.inline-link { color: #e0a57f; text-decoration: underline; text-underline-offset: 3px; }
+.inline-link:hover { color: #f2c3a3; }
+
+/* WhatsApp e telefone do rodapé levam à conversa */
+.whatsapp { transition: transform .2s ease; }
+.whatsapp:hover { transform: scale(1.06); }
+.phone:hover { color: #7ee2a0; }
+
+/* Cartão de serviço */
+.card {
+  padding: 22px 24px;
+  background: rgba(8, 8, 8, .72);
+  border-left: 4px solid var(--copper);
+  border-radius: 6px;
+}
+.card h2 {
+  margin: 0 0 10px;
+  font: 700 24px/1.2 "Cinzel", serif;
+  color: #e0a57f;
+}
+.card p,
+.card ul {
+  margin: 0;
+  font: 400 16px/1.6 var(--sans);
+}
+.card ul { padding: 0; list-style: none; }
+.card li { position: relative; padding-left: 18px; }
+.card li + li { margin-top: 4px; }
+.card h3 {
+  margin: 0 0 8px;
+  font: 700 13px/1.3 var(--sans);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #cfa286;
+}
+.card-groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px 28px;
+}
+.card ul.cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 28px;
+}
+.card ul.cols-2 li + li { margin-top: 0; }
+.card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--copper);
+}
+
+/* Serviços em abas: botões que abrem um painel translúcido logo abaixo */
+.svc { height: auto; }
+/* Abas presas ao cartão no mesmo estilo chanfrado dos botões de TI.
+   O contorno âmbar é o fundo do elemento; o vidro é o ::before, recuado 1,5px. */
+.svc-card {
+  --cut: 12px;
+  --edge: linear-gradient(90deg, #ffc247, #ff8f1f);
+  --edge-dim: rgba(255, 176, 46, .45);
+  --glass: rgba(10, 16, 26, .72);
+}
+.svc-tabs {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+.svc-tab {
+  position: relative;
+  isolation: isolate;
+  flex: 1;
+  height: 46px;
+  padding: 0 12px;
+  border: 0;
+  background: var(--edge-dim);
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% 100%, 0 100%, 0 var(--cut));
+  color: rgba(255, 192, 74, .6);
+  font: 600 17px/1 "Rajdhani", var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: height .25s ease, color .25s ease;
+}
+.svc-tab::before {
+  content: "";
+  position: absolute;
+  inset: 1.5px 1.5px 0;
+  z-index: -1;
+  clip-path: polygon(calc(var(--cut) - 1px) 0, 100% 0, 100% 100%, 0 100%, 0 calc(var(--cut) - 1px));
+  background: rgba(6, 10, 18, .85);
+  transition: background .25s ease;
+}
+.svc-tab:hover { color: #ffc04a; }
+.svc-tab:hover::before { background: linear-gradient(180deg, rgba(255, 190, 80, .14), rgba(6, 10, 18, .85)); }
+.svc-tab[aria-selected="true"] {
+  height: 54px;
+  margin-bottom: -1.5px;
+  background: var(--edge);
+  color: #fff4dc;
+  text-shadow: 0 0 10px rgba(255, 176, 46, .85);
+  cursor: default;
+}
+/* a aba ativa usa o mesmo vidro do cartão e desce sobre a borda dele, unindo os dois */
+.svc-tab[aria-selected="true"]::before {
+  bottom: -1px;
+  background:
+    linear-gradient(180deg, rgba(255, 190, 80, .16), rgba(255, 190, 80, 0) 70%),
+    rgb(12, 19, 30);
+}
+/* LED aceso na aba ativa, igual ao dos botões */
+.svc-tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  bottom: 9px;
+  width: 16px;
+  height: 2px;
+  background: #ffb02e;
+  box-shadow: 0 0 6px #ffb02e;
+}
+.svc-tab:focus-visible { outline: 2px solid #fff4dc; outline-offset: -4px; }
+
+/* Corpo do cartão: contorno âmbar com o canto inferior direito chanfrado e vidro translúcido */
+.svc-body {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 22px 24px;
+  background: var(--edge);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut) * 1.5), calc(100% - var(--cut) * 1.5) 100%, 0 100%);
+  transition: height .32s ease;
+}
+.svc-body::before {
+  content: "";
+  position: absolute;
+  inset: 1.5px;
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut) * 1.5 + 1px), calc(100% - var(--cut) * 1.5 + 1px) 100%, 0 100%);
+  background: rgb(12, 19, 30);
+  background:
+    linear-gradient(180deg, rgba(12, 19, 30, .86), rgba(8, 13, 22, .9));
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  backdrop-filter: blur(10px) saturate(120%);
+}
+.svc-panel { padding: 0; }
+.svc-panel p { margin: 0; font: 400 16px/1.7 var(--sans); color: var(--white); }
+.svc-panel h3 + p { margin-top: 4px; }
+.svc-panel-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.svc-panel-actions .btn { height: 48px; min-width: 260px; }
+.svc-panel ul,
+.svc-panel h3 { font-family: var(--sans); }
+.svc-panel > ul,
+.svc-panel ul { margin: 0; padding: 0; list-style: none; font: 400 16px/1.6 var(--sans); }
+.svc-panel li { position: relative; padding-left: 18px; }
+.svc-panel li + li { margin-top: 4px; }
+.svc-panel ul.cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 28px; }
+.svc-panel ul.cols-2 li + li { margin-top: 0; }
+.svc-panel li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffb02e;
+  box-shadow: 0 0 6px rgba(255, 176, 46, .7);
+}
+.svc-panel h3 {
+  margin: 0 0 8px;
+  font: 700 13px/1.3 var(--sans);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #ffc04a;
+}
+.svc-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+}
+.svc-actions .btn { height: 56px; }
+.svc-actions .btn-whats { width: 340px; }
+.svc-actions .svc-back { width: 150px; }
+
+/* Trabalho exibido dentro do site: barra de navegação + janela que ocupa a tela até o rodapé */
+.embed {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.embed-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(6, 10, 18, .92);
+  border-top: 1px solid rgba(255, 176, 46, .35);
+  border-bottom: 1px solid rgba(255, 176, 46, .35);
+}
+.embed-btn { position: relative; height: 38px; padding: 0 16px; font-size: 13px; white-space: nowrap; }
+.embed-title {
+  font: 600 15px/1 "Rajdhani", var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #ffc04a;
+  text-align: center;
+}
+.embed-frame {
+  display: block;
+  width: 100%;
+  height: calc(100vh - var(--foot-offset, 158px) - 55px);
+  min-height: 420px;
+  border: 0;
+  background: #fff;
+}
+
+/* App exibido dentro de um celular de demonstração (no computador).
+   O aparelho tem tamanho real (tela de 390x844) e o site.js reduz o conjunto para caber na tela. */
+.device-stage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: calc(872px * var(--device-k, .7) + 48px);
+  padding-top: 24px;
+  overflow: hidden;
+}
+.device {
+  position: relative;
+  flex: none;
+  width: 418px;
+  height: 872px;
+  padding: 14px;
+  border-radius: 54px;
+  background: linear-gradient(145deg, #2c3138, #0b0e12 60%);
+  box-shadow:
+    inset 0 0 0 2px #4a5058,
+    0 0 0 1px #000,
+    0 30px 60px rgba(0, 0, 0, .65),
+    0 0 40px rgba(255, 176, 46, .16);
+  transform: scale(var(--device-k, .7));
+  transform-origin: top center;
+}
+/* câmera no topo da tela */
+.device::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  z-index: 2;
+  width: 100px;
+  height: 26px;
+  margin-left: -50px;
+  border-radius: 14px;
+  background: #000;
+}
+/* botão lateral */
+.device::after {
+  content: "";
+  position: absolute;
+  top: 160px;
+  right: -4px;
+  width: 4px;
+  height: 80px;
+  border-radius: 0 3px 3px 0;
+  background: #3a4048;
+}
+.device-screen {
+  display: block;
+  width: 390px;
+  height: 844px;
+  border: 0;
+  border-radius: 42px;
+  background: #fff;
+}
+
+/* Vídeo com controles */
+.player { background: #000; }
+.player video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+
+/* Imagens ampliáveis */
+.zoomable { cursor: zoom-in; }
+.zoom-btn {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .55);
+  color: #fff;
+  font-size: 22px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, .9);
+  cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; cursor: default; }
+img.zoomable { transition: transform .2s ease, filter .2s ease; }
+img.zoomable:hover { transform: scale(1.02); filter: brightness(1.08); }
+.lb-btn {
+  position: absolute;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.lb-btn:hover { background: rgba(255, 255, 255, .28); }
+.lb-prev, .lb-next {
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  margin-top: -26px;
+  font: 400 40px/48px Arial, sans-serif;
+}
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+.lb-close {
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  font: 400 30px/42px Arial, sans-serif;
+}
+.lb-count {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font: 400 14px/1 var(--sans);
+  color: rgba(255, 255, 255, .8);
+}
+.lightbox.open ~ .scroll-hint { display: none; }
+.lightbox.single .lb-prev,
+.lightbox.single .lb-next,
+.lightbox.single .lb-count { display: none; }
+@media (max-width: 640px) {
+  .lightbox { padding: 56px 8px; }
+  .lb-prev, .lb-next { width: 40px; height: 40px; margin-top: -20px; font-size: 30px; line-height: 36px; }
+  .lb-prev { left: 6px; }
+  .lb-next { right: 6px; }
+}
+
+/* Luvinha que avisa que dá para rolar a página (criada pelo site.js) */
+.scroll-hint {
+  position: fixed;
+  right: 18px;
+  bottom: calc(var(--foot-offset, 158px) + 14px);
+  z-index: 20;
+  width: 46px;
+  height: 58px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+.scroll-hint.show {
+  opacity: 1;
+  pointer-events: auto;
+  animation: hint-blink 1.3s ease-in-out infinite;
+}
+.scroll-hint svg { width: 100%; height: 100%; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .55)); }
+@keyframes hint-blink {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: .35; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint.show { animation: none; }
+}
+
+/* ---------- Celular: layout empilhado em vez do palco escalado ---------- */
+@media (max-width: 640px) {
+  .stage-wrap,
+  .head-wrap,
+  .content-wrap,
+  .foot-wrap {
+    height: auto;
+    overflow: visible;
+  }
+  .head-wrap::before { display: none; }
+
+  .stage,
+  .head-wrap .stage,
+  .content-wrap .stage,
+  .foot-wrap .stage {
+    position: static;
+    width: auto;
+    height: auto;
+    transform: none;
+  }
+
+  .el {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+  }
+  .el > img { height: auto; }
+
+  /* Cabeçalho: lâmpada, nome e áreas numa faixa preta contínua */
+  .head-wrap .stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--black);
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    padding-top: 16px;
+  }
+  .logo img { width: 84px; height: 96px; }
+
+  .name {
+    padding: 4px 8px 0;
+    font-size: clamp(28px, 9vw, 58px);
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+  }
+
+  .roles {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 18px;
+    padding: 6px 12px 22px;
+    font-size: clamp(14px, 4.2vw, 20px);
+    line-height: 1.8;
+    white-space: nowrap;
+  }
+  .roles > .sep { display: none; }
+
+  /* Conteúdo: coluna com respiro lateral */
+  .content-wrap .stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 28px 16px 40px;
+  }
+  .content-wrap .el { max-width: calc(var(--w) * 1px); }
+  .content-wrap .el > img,
+  .content-wrap img.el { aspect-ratio: var(--w) / var(--h); }
+
+  .vtext { width: min(86vw, 340px); aspect-ratio: var(--w) / var(--h); align-self: flex-start; }
+  .vtext .vt-fill { position: absolute; inset: 0; height: auto; }
+  .content-wrap .plate { width: 100%; max-width: none; align-self: stretch; padding: 14px 22px; }
+  .plate .vtext { width: min(72vw, calc(var(--w) * 1px)); height: auto; }
+  .btn, .back { height: calc(var(--h) * 1px); width: auto; padding: 0 22px; }
+  .urltext { font-size: clamp(14px, 4.4vw, calc(var(--fs) * 1px)); width: auto; white-space: normal; overflow-wrap: anywhere; }
+  .player { aspect-ratio: var(--w) / var(--h); }
+  .player video { height: 100%; }
+  .heading { font-size: clamp(26px, 8vw, 40px); }
+  .card-groups,
+  .card ul.cols-2 { grid-template-columns: 1fr; }
+  .embed-bar { padding: 6px 8px; }
+  /* no celular o app ocupa a tela toda, sem a moldura */
+  .device-stage { height: auto; padding: 0; overflow: visible; }
+  .device {
+    width: 100%;
+    height: calc(100vh - var(--foot-offset, 120px) - 50px);
+    min-height: 420px;
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    transform: none;
+  }
+  .device::before,
+  .device::after { display: none; }
+  .device-screen { width: 100%; height: 100%; border-radius: 0; }
+  .embed-title { display: none; }
+  .embed-btn { height: 36px; padding: 0 12px; font-size: 12px; letter-spacing: .08em; }
+  .svc-tabs { gap: 8px; }
+  .svc-tab { font-size: 15px; letter-spacing: .1em; }
+  .svc-body { padding: 18px 16px; }
+  .svc-panel ul.cols-2 { grid-template-columns: 1fr; }
+  .svc-panel ul.cols-2 li + li { margin-top: 4px; }
+  .svc-actions { flex-wrap: wrap; justify-content: center; }
+  .svc-actions .btn-whats { width: 100%; max-width: 340px; }
+  .svc-actions .svc-back { width: 100%; max-width: 340px; }
+  .card ul.cols-2 li + li { margin-top: 4px; }
+  .text { font-size: 15px; line-height: 1.7; }
+  .justify { text-align: left; }
+  .text p { margin-bottom: 1em; }
+
+  /* Grupos que viram grade de 2 colunas no celular */
+  .grid-m {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+  .grid-m .el { max-width: none; }
+  .row-m {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+  .row-m .el { width: auto; }
+  /* Botões de uma mesma linha: empilhados e todos da mesma largura */
+  .row-m:has(> .btn) { flex-direction: column; align-items: center; }
+  .row-m > .btn { width: 100%; max-width: 280px; }
+
+  /* Rodapé: lâmpada e redes à esquerda; à direita, o WhatsApp centralizado em cima do telefone */
+  .foot-wrap .stage {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "bulb . wa"
+      "social . phone";
+    align-items: center;
+    column-gap: 12px;
+    /* espaço embaixo para o selo "Powered by Netlify" não cobrir o telefone */
+    padding: 12px 16px 68px;
+  }
+  .bulb-small { grid-area: bulb; justify-self: center; width: 56px !important; }
+  .bulb-small img { height: auto; }
+  .whatsapp { grid-area: wa; justify-self: center; width: 60px !important; }
+  .whatsapp img { height: auto; }
+  .socials { grid-area: social; display: flex; gap: 10px; }
+  .social { width: 34px !important; }
+  .phone {
+    grid-area: phone;
+    justify-self: end;
+    width: auto;
+    font-size: clamp(16px, 5vw, 22px);
+    /* apoiado na mesma linha de baixo das logos das redes */
+    align-self: end;
+    line-height: 1;
+    margin-bottom: -.12em;
+  }
+}
+
+/* ---------- Abertura: a lâmpada da logo aparece cinza, acende e revela o site (2 s) ---------- */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: #050505;
+  animation: intro-sai .6s ease 1.4s forwards;
+}
+.intro-luz {
+  position: absolute;
+  width: 70vmin;
+  height: 70vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 214, 80, .55), rgba(255, 170, 30, .18) 40%, transparent 70%);
+  opacity: 0;
+  animation: intro-brilho .67s ease-out .73s forwards;
+}
+.intro img {
+  position: relative;
+  width: min(36vmin, 220px);
+  filter: grayscale(1) brightness(.5);
+  opacity: 0;
+  animation: intro-aparece .27s ease forwards, intro-acende .12s steps(1) .73s forwards;
+}
+@keyframes intro-aparece { to { opacity: 1; } }
+@keyframes intro-acende { to { filter: grayscale(0) brightness(1.08) drop-shadow(0 0 22px rgba(255, 210, 70, .9)); } }
+@keyframes intro-brilho { 0% { opacity: 0; transform: scale(.6); } 35% { opacity: 1; } 100% { opacity: .75; transform: scale(1); } }
+@keyframes intro-sai { to { opacity: 0; visibility: hidden; } }
+/* Quem prefere menos movimento fica sem a abertura */
+@media (prefers-reduced-motion: reduce) { .intro { display: none; } }
+
+/* Botão da TI que captura um pulso de luz do fundo: a borda acende em azul e um brilho atravessa o vidro */
+.btn-tech.energia,
+.svc-tab.energia {
+  --amber: #6ec8ff;
+  background: linear-gradient(90deg, #8fd6ff, #2f8cff);
+  color: #d9f1ff;
+  text-shadow: 0 0 10px rgba(90, 190, 255, .9);
+}
+.btn-tech.energia::before,
+.svc-tab.energia::before {
+  background:
+    linear-gradient(100deg, transparent 30%, rgba(140, 210, 255, .45) 50%, transparent 70%) var(--entrada, -100%) 0 / 60% 100% no-repeat,
+    linear-gradient(180deg, rgba(16, 24, 36, .94), rgba(6, 10, 18, .94));
+  animation: btn-carga .9s ease-out forwards;
+}
+@keyframes btn-carga {
+  to { background-position: var(--saida, 200%) 0, 0 0; }
+}
